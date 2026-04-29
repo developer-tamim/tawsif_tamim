@@ -1,6 +1,6 @@
 <script setup>
 import Hero from './components/Hero.vue'
-import Animation from './components/Animation.vue'
+// import Animation from './components/Animation.vue'
 // import Header from './components/Header.vue'
 import About from './components/About.vue'
 import Work from './components/Work.vue';
@@ -11,7 +11,7 @@ import Experience from './components/Experience.vue';
 <template lang="">
   <div class="p-10 px-20">
     <Hero/>
-    <Animation/>
+    <!-- <Animation/> -->
     
     <!-- <Header /> -->
     <About/>

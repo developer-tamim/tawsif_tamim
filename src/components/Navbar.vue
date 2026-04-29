@@ -15,7 +15,7 @@
     <div class="flex items-center justify-between px-6 md:px-8 h-[60px]">
       <!-- Logo -->
       <div class="flex items-center gap-2">
-        <span class="text-2xl font-bold tracking-tight text-[#a786ff]">
+        <span class="text-2xl font-bold tracking-tight text-[#16db65]">
           Tawsif <span class="text-white">Tamim</span>
         </span>
       </div>
@@ -28,14 +28,14 @@
             :class="[
               'relative text-sm font-semibold tracking-wide transition-colors duration-300 no-underline',
               activeSection === item.href
-                ? 'text-[#a786ff]'
-                : 'text-gray-700 hover:text-[#a786ff]'
+                ? 'text-[#16db65]'
+                : 'text-gray-700 hover:text-[#16db65]'
             ]"
           >
             {{ item.label }}
             <span
               :class="[
-                'absolute -bottom-1 left-0 h-0.5 bg-[#a786ff] transition-all duration-300',
+                'absolute -bottom-1 left-0 h-0.5 bg-[#16db65] transition-all duration-300',
                 activeSection === item.href ? 'w-full' : 'w-0'
               ]"
             />
@@ -48,7 +48,7 @@
         <!-- Search Button -->
         <button
           @click="toggleSearch"
-          class="p-2 text-[#a786ff] hover:scale-110 transition-transform duration-200 bg-transparent border-none cursor-pointer"
+          class="p-2 text-[#16db65] hover:scale-110 transition-transform duration-200 bg-transparent border-none cursor-pointer"
         >
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="11" cy="11" r="8" />

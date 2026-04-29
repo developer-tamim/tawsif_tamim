@@ -1,21 +1,81 @@
-<!-- Hero.vue -->
 <template>
   <div class="hero-wrapper">
-  <Navbar />
-  <div class="hero">
-    <h1>Hey there, I'm <span>Tawsif Tamim</span></h1>
-    <h1>
-      with the experience of
-      <span
-        ref="scrambleEl"
-        class="scramble-text"
-        @mouseenter="replay"
-      >
-        {{ displayText }}
-      </span>
-    </h1>
-    <p class="subtitle">Let me show You...</p>
-  </div>
+    <Navbar />
+
+    <div class="hero-container">
+
+      <!-- LEFT SIDE -->
+      <div class="hero-left">
+        <h1>Hey there, I'm <span>Tawsif Tamim</span></h1>
+
+        <h1>
+          with the experience of
+          <br>
+          <span
+            ref="scrambleEl"
+            class="scramble-text"
+            @mouseenter="replay"
+          >
+            {{ displayText }}
+          </span>
+        </h1>
+
+        <p class="subtitle">Let me show You...</p>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="hero-right">
+        <div class="grid w-full max-w-xl grid-cols-2 gap-5">
+
+          <!-- BIG CARD -->
+          <div class="col-span-1 row-span-2 gradient-border">
+            <div class="flex flex-col justify-between h-full p-6 card-inner">
+
+              <div>
+                <h2 class="text-4xl font-bold text-white">$500K</h2>
+                <p class="mt-2 text-sm text-gray-400">
+                  Saved Through <br />
+                  Resource Optimization
+                </p>
+              </div>
+
+              <!-- 3D Shape (placeholder) -->
+              <div class="flex justify-center mt-6">
+                <div class="w-32 h-32 bg-green-500/20 rounded-xl blur-2xl"></div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- IMAGE -->
+          <div class="gradient-border">
+            <div class="overflow-hidden card-inner">
+              <img
+                src="../assets/me.jpg"
+                class="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+
+          <!-- SMALL -->
+          <div class="gradient-border">
+            <div class="flex items-center justify-center p-5 card-inner">
+              <p class="font-semibold text-white">100% Code Quality</p>
+            </div>
+          </div>
+
+          <!-- SMALL -->
+          <div class="gradient-border">
+            <div class="p-5 text-center card-inner">
+              <h3 class="text-3xl font-bold text-white">10+</h3>
+              <p class="text-sm text-gray-400">Years of Coding</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
   </div>
 </template>
 
@@ -51,15 +111,13 @@ const displayText = ref('')
 const currentIndex = ref(0)
 const frame = ref(0)
 const queue = ref([])
-const isAnimating = ref(false)
 const frameRequest = ref(null)
 const intervalId = ref(null)
 
 const scramble = (text) => {
-  const length = text.length
   queue.value = []
 
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < text.length; i++) {
     queue.value.push({
       to: text[i],
       start: Math.floor(Math.random() * 20),
@@ -68,7 +126,6 @@ const scramble = (text) => {
   }
 
   frame.value = 0
-  isAnimating.value = true
   update()
 }
 
@@ -83,12 +140,9 @@ const update = () => {
       complete++
       output += to
     } else if (frame.value >= start) {
-      if (Math.random() < props.scrambleChance) {
-        output += to
-      } else {
-        const randomChar = props.chars[Math.floor(Math.random() * props.chars.length)]
-        output += randomChar
-      }
+      output += Math.random() < props.scrambleChance
+        ? to
+        : props.chars[Math.floor(Math.random() * props.chars.length)]
     } else {
       output += props.chars[Math.floor(Math.random() * props.chars.length)]
     }
@@ -96,10 +150,7 @@ const update = () => {
 
   displayText.value = output
 
-  if (complete === queue.value.length) {
-    isAnimating.value = false
-    frameRequest.value = null
-  } else {
+  if (complete !== queue.value.length) {
     frame.value++
     frameRequest.value = requestAnimationFrame(update)
   }
@@ -113,7 +164,7 @@ const nextWord = () => {
 
 const start = () => {
   nextWord()
-  intervalId.value = setInterval(() => nextWord(), props.autoRotateInterval)
+  intervalId.value = setInterval(nextWord, props.autoRotateInterval)
 }
 
 const replay = () => {
@@ -122,7 +173,7 @@ const replay = () => {
 }
 
 onMounted(() => {
-  setTimeout(() => start(), props.startDelay)
+  setTimeout(start, props.startDelay)
 })
 
 onUnmounted(() => {
@@ -133,47 +184,47 @@ onUnmounted(() => {
 
 <style scoped>
 .hero-wrapper {
-   padding-top: 100px;
+  padding-top: 100px;
 }
-/* .hero {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-} */
-.hero {
+
+/* Layout */
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
   min-height: 80vh;
+}
+
+.hero-left {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.hero h1 {
+/* Text */
+.hero-left h1 {
   font-size: 3rem;
   font-weight: 700;
   line-height: 1.3;
   margin-bottom: 1rem;
 }
 
-.hero h1 span {
-  color: #a786ff;
+.hero-left span {
+  color: #16db65;
 }
 
 .scramble-text {
   font-size: 3rem;
   font-weight: 700;
-  color: #fffffe;
-  display: inline-block;
+  color: #16db65;
   min-width: 16ch;
   position: relative;
-  color: #a786ff;
 }
 
-/* Cursor blink */
 .scramble-text::after {
   content: '|';
-  color: #a786ff;
   animation: blink 1s step-end infinite;
-  margin-left: 2px;
 }
 
 @keyframes blink {
@@ -184,5 +235,56 @@ onUnmounted(() => {
   font-size: 1.2rem;
   color: #94a1b2;
   margin-top: 1.5rem;
+}
+
+/* RIGHT */
+.hero-right {
+  display: flex;
+  justify-content: center;
+}
+
+/* ✅ CORRECT BORDER (matches your image) */
+.gradient-border {
+  position: relative;
+  border-radius: 16px;
+
+  background:
+    linear-gradient(#0b0f0c, #0b0f0c) padding-box,
+    linear-gradient(135deg, rgba(34,197,94,0.6), rgba(34,197,94,0.05)) border-box;
+
+  border: 1px solid transparent;
+
+  box-shadow:
+    0 0 0 1px rgba(34,197,94,0.1),
+    0 10px 40px rgba(34,197,94,0.15);
+}
+
+/* inner subtle line */
+.gradient-border::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+  pointer-events: none;
+}
+
+/* card */
+.card-inner {
+  border-radius: 16px;
+  background: rgba(10, 15, 12, 0.92);
+  backdrop-filter: blur(8px);
+  height: 100%;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-right {
+    margin-top: 40px;
+  }
 }
 </style>
