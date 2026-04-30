@@ -20,7 +20,31 @@
           </span>
         </h1>
 
-        <p class="subtitle">Let me show You...</p>
+        <div class="flex flex-col mt-8 gap-7">
+          <div class="flex items-center text-2xl text-white gap-7">
+            <a href="#" class="transition hover:text-green-400" aria-label="Telegram">
+              <i class="fa-brands fa-telegram-plane"></i>
+            </a>
+            <a href="#" class="transition hover:text-green-400" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="#" class="transition hover:text-green-400" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="transition hover:text-green-400" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+
+          <div class="flex flex-wrap gap-4">
+            <a :href="resumePdf" target="_blank" class="inline-block px-6 py-3 font-semibold text-black transition bg-green-400 rounded-xl hover:bg-green-500">
+              Resume
+            </a>
+            <button class="px-6 py-3 font-semibold text-white transition border rounded-xl border-white/20 hover:bg-white/10">
+              Hire me
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- RIGHT SIDE -->
@@ -81,6 +105,7 @@
 
 <script setup>
 import Navbar from './Navbar.vue'
+import resumePdf from '../assets/SYED_TAWSIF_AZAM_TAMIM.pdf'
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const props = defineProps({

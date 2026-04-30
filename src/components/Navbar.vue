@@ -1,7 +1,7 @@
 <template>
   <nav
     :class="[
-      'fixed top-4 left-1/2 -translate-x-1/2 z-50 rounded-2xl transition-all duration-300',
+      'fixed top-4 left-1/2 -translate-x-1/2 z-50 rounded-full transition-all duration-300',
       'w-[calc(100%-2rem)] max-w-[1100px]',
       'border border-white/20',
       'shadow-[0_8px_32px_rgba(0,0,0,0.37),inset_0_0_0_1px_rgba(255,255,255,0.1)]',
