@@ -22,16 +22,16 @@
 
         <div class="flex flex-col mt-8 gap-7">
           <div class="flex items-center text-2xl text-white gap-7">
-            <a href="#" class="transition hover:text-green-400" aria-label="Telegram">
+            <a href="https://t.me/+8801829725123" target="_blank" class="transition hover:text-green-400" aria-label="Telegram">
               <i class="fa-brands fa-telegram-plane"></i>
             </a>
-            <a href="#" class="transition hover:text-green-400" aria-label="WhatsApp">
+            <a href="https://wa.me/8801829725123" target="_blank" class="transition hover:text-green-400" aria-label="WhatsApp">
               <i class="fa-brands fa-whatsapp"></i>
             </a>
-            <a href="#" class="transition hover:text-green-400" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/syed-tawsif-azam-tamim/" target="_blank" class="transition hover:text-green-400" aria-label="LinkedIn">
               <i class="fa-brands fa-linkedin-in"></i>
             </a>
-            <a href="#" class="transition hover:text-green-400" aria-label="Instagram">
+            <a href="https://www.instagram.com/tamimtawsif/" target="_blank" class="transition hover:text-green-400" aria-label="Instagram">
               <i class="fa-brands fa-instagram"></i>
             </a>
           </div>
