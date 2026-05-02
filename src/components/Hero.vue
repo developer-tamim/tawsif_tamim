@@ -1,27 +1,57 @@
 <template>
-  <div class="hero-wrapper">
+  <div class="pt-2 pb-20 hero-wrapper">
     <Navbar />
 
-    <div class="hero-container">
+    <div class="relative z-10 max-w-6xl px-6 pt-5 mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-80px)]">
+    <!-- <div class="hero-container grid grid-cols-2 gap-[50px] items-center min-h-[80vh] lg:grid-cols-1"> -->
 
       <!-- LEFT SIDE -->
-      <div class="hero-left">
-        <h1>Hey there, I'm <span>Tawsif Tamim</span></h1>
+      <div class="flex flex-col justify-center hero-left">
+        <!-- Badge -->
+          <div class="inline-flex items-center gap-2 px-5 py-3 text-sm font-medium border border-[#04471c] rounded-full bg-black/80 backdrop-blur-md w-max max-w-full">
+            <span class="relative flex w-3 h-3">
+              <span class="absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping bg-[#16db65]"></span>
+              <span class="relative inline-flex w-3 h-3 rounded-full bg-[#16db65]"></span>
+            </span>
+            Available for Freelance & Opportunities
+          </div>
 
-        <h1>
+           <!-- Main Heading -->
+         <h1 class="text-5xl font-bold leading-tight tracking-tighter text-white md:text-7xl">
+            Hey there, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#058c42] via-[#0eb454] to-[#16db65]">Tawsif Tamim</span>
+          </h1>
+
+        <h1 class="text-5xl font-bold leading-[1.3] mb-4">
           with the experience of
           <br>
           <span
             ref="scrambleEl"
-            class="scramble-text"
+            class="scramble-text text-5xl font-bold text-[#16db65] min-w-[16ch] relative"
             @mouseenter="replay"
           >
             {{ displayText }}
           </span>
         </h1>
 
+        <p class="max-w-lg text-lg text-gray-400">
+            Pixel-perfect by design. Performance-driven by default.
+          </p>
+
         <div class="flex flex-col mt-8 gap-7">
-          <div class="flex items-center text-2xl text-white gap-7">
+          <div class="flex flex-wrap gap-4">
+            <a :href="resumePdf" target="_blank" class="inline-block px-6 py-3 font-semibold text-black transition bg-green-400 rounded-xl hover:bg-green-500">
+              <i class="fa-regular fa-file-lines"></i>
+              Resume
+            </a>
+            <button class="px-6 py-3 font-semibold text-white transition border rounded-xl border-white/20 hover:bg-white/10">
+            <i class="fa-solid fa-sagittarius"></i>
+              Hire me
+            </button>
+          </div>
+          
+        <!-- Icons -->
+          <!-- <div class="flex items-center text-2xl text-white gap-7">
             <a href="https://t.me/+8801829725123" target="_blank" class="transition hover:text-green-400" aria-label="Telegram">
               <i class="fa-brands fa-telegram-plane"></i>
             </a>
@@ -34,72 +64,58 @@
             <a href="https://www.instagram.com/tamimtawsif/" target="_blank" class="transition hover:text-green-400" aria-label="Instagram">
               <i class="fa-brands fa-instagram"></i>
             </a>
-          </div>
+          </div> -->
 
-          <div class="flex flex-wrap gap-4">
-            <a :href="resumePdf" target="_blank" class="inline-block px-6 py-3 font-semibold text-black transition bg-green-400 rounded-xl hover:bg-green-500">
-              Resume
-            </a>
-            <button class="px-6 py-3 font-semibold text-white transition border rounded-xl border-white/20 hover:bg-white/10">
-              Hire me
-            </button>
-          </div>
         </div>
+
+        <!-- Trust / Stats -->
+          <div class="flex items-center gap-10 pt-8 text-sm">
+            <div>
+              <span class="font-mono text-2xl font-bold text-[#16db65]">15+</span>
+              <p class="text-gray-500">Projects Delivered</p>
+            </div>
+            <div>
+              <span class="font-mono text-2xl font-bold text-[#16db65]">8+</span>
+              <p class="text-gray-500">Happy Clients</p>
+            </div>
+            <div>
+              <span class="font-mono text-2xl font-bold text-[#16db65]">2</span>
+              <p class="text-gray-500">Years Experience</p>
+            </div>
+          </div>
       </div>
 
       <!-- RIGHT SIDE -->
-      <div class="hero-right">
-        <div class="grid w-full max-w-xl grid-cols-2 gap-5">
+      <div class="flex justify-center hero-right lg:mt-10">
+        <div class="relative w-full max-w-xl">
+          <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[rgba(10,15,12,0.92)] p-8 shadow-2xl">
+            <div class="absolute -right-12 top-12 h-40 w-40 rounded-full bg-[#16db65]/20 blur-3xl"></div>
+            <div class="absolute -left-10 bottom-8 h-32 w-32 rounded-full bg-[#0eb454]/15 blur-3xl"></div>
 
-          <!-- BIG CARD -->
-          <div class="col-span-1 row-span-2 gradient-border">
-            <div class="flex flex-col justify-between h-full p-6 card-inner">
+            <div class="relative">
+              <span class="inline-flex px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#16db65] bg-white/5 rounded-full">
+                Product-led design
+              </span>
+              <h3 class="mt-6 text-4xl font-semibold text-white">Interfaces built to convert and delight</h3>
+              <p class="max-w-xl mt-4 text-gray-400">I deliver premium landing pages, dashboards, and brand experiences with sharp motion, polished visuals, and strong conversion focus.</p>
+            </div>
 
-              <div>
-                <h2 class="text-4xl font-bold text-white">$500K</h2>
-                <p class="mt-2 text-sm text-gray-400">
-                  Saved Through <br />
-                  Resource Optimization
-                </p>
+            <div class="grid gap-4 mt-8 sm:grid-cols-2">
+              <div class="p-5 border rounded-3xl border-white/10 bg-black/50">
+                <p class="text-sm text-gray-400">Launch speed</p>
+                <p class="mt-3 text-3xl font-bold text-white">2 weeks</p>
               </div>
-
-              <!-- 3D Shape (placeholder) -->
-              <div class="flex justify-center mt-6">
-                <div class="w-32 h-32 bg-green-500/20 rounded-xl blur-2xl"></div>
+              <div class="p-5 border rounded-3xl border-white/10 bg-black/50">
+                <p class="text-sm text-gray-400">Design systems</p>
+                <p class="mt-3 text-3xl font-bold text-white">Scalable</p>
               </div>
-
             </div>
           </div>
-
-          <!-- IMAGE -->
-          <div class="gradient-border">
-            <div class="overflow-hidden card-inner">
-              <img
-                src="../assets/me.jpg"
-                class="object-cover w-full h-full"
-              />
-            </div>
-          </div>
-
-          <!-- SMALL -->
-          <div class="gradient-border">
-            <div class="flex items-center justify-center p-5 card-inner">
-              <p class="font-semibold text-white">100% Code Quality</p>
-            </div>
-          </div>
-
-          <!-- SMALL -->
-          <div class="gradient-border">
-            <div class="p-5 text-center card-inner">
-              <h3 class="text-3xl font-bold text-white">10+</h3>
-              <p class="text-sm text-gray-400">Years of Coding</p>
-            </div>
-          </div>
-
         </div>
       </div>
 
     </div>
+  </div>
   </div>
 </template>
 
@@ -208,45 +224,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.hero-wrapper {
-  padding-top: 100px;
-}
-
-/* Layout */
-.hero-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: center;
-  min-height: 80vh;
-}
-
-.hero-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* Text */
-.hero-left h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: 1rem;
-}
-
-.hero-left span {
-  color: #16db65;
-}
-
-.scramble-text {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #16db65;
-  min-width: 16ch;
-  position: relative;
-}
-
 .scramble-text::after {
   content: '|';
   animation: blink 1s step-end infinite;
@@ -260,12 +237,6 @@ onUnmounted(() => {
   font-size: 1.2rem;
   color: #94a1b2;
   margin-top: 1.5rem;
-}
-
-/* RIGHT */
-.hero-right {
-  display: flex;
-  justify-content: center;
 }
 
 /* ✅ CORRECT BORDER (matches your image) */
@@ -292,24 +263,5 @@ onUnmounted(() => {
   border-radius: 16px;
   border: 1px solid rgba(255,255,255,0.05);
   pointer-events: none;
-}
-
-/* card */
-.card-inner {
-  border-radius: 16px;
-  background: rgba(10, 15, 12, 0.92);
-  backdrop-filter: blur(8px);
-  height: 100%;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-right {
-    margin-top: 40px;
-  }
 }
 </style>

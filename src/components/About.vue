@@ -1,76 +1,100 @@
 <template>
-  <section id="about" class="py-24 bg-white dark:bg-gray-950">
+  <section id="about" class="py-24 bg-[#020602]">
     <div class="px-6 mx-auto max-w-7xl lg:px-8">
       <div class="grid items-center gap-16 lg:grid-cols-2">
-        
-        <!-- Left Side: Image -->
-        <div class="relative">
-          <div class="overflow-hidden shadow-2xl aspect-square rounded-3xl">
-            <img 
-              src="../assets/me.jpg" 
-              alt="About me" 
-              class="object-cover w-full h-full"
-            >
+
+        <div class="space-y-8">
+          <span class="text-sm font-medium tracking-[0.32em] uppercase text-[#16db65]">
+            About Me
+          </span>
+          <h2 class="text-4xl font-bold leading-tight text-white lg:text-5xl">
+            Hi, I'm <span class="text-[#16db65]">Tawsif Tamim</span>
+          </h2>
+
+          <div class="space-y-5 text-lg text-gray-400 max-w-xl">
+            <p>
+              I am a developer who builds expressive digital experiences with clean architecture and strong visual polish.
+            </p>
+            <p>
+              I focus on fast, accessible interfaces and brand-led products that help businesses grow without compromising performance.
+            </p>
           </div>
-          
-          <!-- Optional decorative elements -->
-          <div class="absolute p-6 bg-white border border-gray-100 shadow-xl -bottom-6 -right-6 dark:bg-gray-900 rounded-2xl dark:border-gray-800">
-            <div class="text-center">
-              <div class="text-4xl font-bold text-primary">2+</div>
-              <div class="text-sm text-gray-500 dark:text-gray-400">Years Experience</div>
+
+          <div class="grid gap-4 sm:grid-cols-3">
+            <div class="rounded-3xl border border-white/10 bg-[rgba(255,255,255,0.04)] p-5">
+              <p class="text-sm text-gray-400">Projects Delivered</p>
+              <p class="mt-3 text-3xl font-bold text-white">15+</p>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-[rgba(255,255,255,0.04)] p-5">
+              <p class="text-sm text-gray-400">Happy Clients</p>
+              <p class="mt-3 text-3xl font-bold text-white">8+</p>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-[rgba(255,255,255,0.04)] p-5">
+              <p class="text-sm text-gray-400">Years Experience</p>
+              <p class="mt-3 text-3xl font-bold text-white">2</p>
             </div>
           </div>
         </div>
 
-        <!-- Right Side: Content -->
-        <div class="space-y-8">
-          <div>
-            <span class="text-sm font-medium tracking-widest uppercase text-primary">
-              About Me
-            </span>
-            <h2 class="mt-3 text-4xl font-bold leading-tight text-gray-900 lg:text-5xl dark:text-white">
-              Hi, I'm <span class="text-primary">Tawsif Tamim</span>
-            </h2>
-          </div>
-
-          <div class="text-lg prose text-gray-600 dark:prose-invert dark:text-gray-300">
-            <p>
-              I'm a passionate Full Stack Developer with expertise in modern web technologies. 
-              I love turning ideas into beautiful, functional digital experiences.
-            </p>
-            <p>
-              With a strong focus on clean code, performance, and user experience, 
-              I create applications that not only look great but also deliver real value.
-            </p>
-          </div>
-
-          <!-- Stats or Highlights -->
-          <div class="grid grid-cols-3 gap-8 pt-6">
-            <div>
-              <div class="text-3xl font-semibold text-gray-900 dark:text-white">50+</div>
-              <div class="text-sm text-gray-500 dark:text-gray-400">Projects Completed</div>
+        <div class="grid w-full max-w-xl gap-5">
+          <div class="relative gradient-border rounded-[2rem] overflow-hidden shadow-2xl">
+            <img
+              src="../assets/me.jpg"
+              class="object-cover w-full h-[520px] transition-transform duration-700 ease-out hover:scale-105"
+              alt="Tawsif Tamim"
+            />
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="absolute top-6 left-6 rounded-2xl border border-[#16db65]/30 bg-black/70 px-4 py-2 text-sm font-medium text-white">
+              Creative Design Lead
             </div>
-            <div>
-              <div class="text-3xl font-semibold text-gray-900 dark:text-white">30+</div>
-              <div class="text-sm text-gray-500 dark:text-gray-400">Happy Clients</div>
-            </div>
-            <div>
-              <div class="text-3xl font-semibold text-gray-900 dark:text-white">15+</div>
-              <div class="text-sm text-gray-500 dark:text-gray-400">Technologies</div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/85 to-transparent">
+              <p class="text-xs uppercase tracking-[0.3em] text-[#16db65] font-mono">Chattogram, BD</p>
+              <h3 class="mt-3 text-3xl font-semibold text-white">Building high-end digital products</h3>
+              <p class="max-w-lg mt-3 text-sm text-gray-400">Design systems, brand experiences, and performant interfaces that scale.</p>
             </div>
           </div>
 
-          <!-- CTA Button -->
-          <!-- <button 
-            @click="scrollToContact"
-            class="flex items-center gap-3 px-8 py-4 mt-8 font-medium text-white transition-all duration-300 bg-primary hover:bg-primary/90 rounded-2xl group"
-          >
-            Let's Work Together
-            <span class="transition-transform group-hover:translate-x-1">→</span>
-          </button> -->
+          <div class="grid grid-cols-2 gap-5">
+            <div class="rounded-[2rem] border border-white/10 bg-[rgba(10,15,12,0.92)] p-5 backdrop-blur-[8px]">
+              <p class="text-sm text-gray-400">Projects</p>
+              <p class="mt-4 text-4xl font-bold text-white">15+</p>
+              <p class="mt-2 text-xs uppercase tracking-[0.3em] text-[#16db65]">Delivered</p>
+            </div>
+            <div class="rounded-[2rem] border border-white/10 bg-[rgba(10,15,12,0.92)] p-5 backdrop-blur-[8px]">
+              <p class="text-sm text-gray-400">Design Focus</p>
+              <p class="mt-4 text-4xl font-bold text-white">UI/UX</p>
+              <p class="mt-2 text-xs uppercase tracking-[0.3em] text-[#16db65]">Brand Systems</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+.gradient-border {
+  position: relative;
+  border-radius: 16px;
+
+  background:
+    linear-gradient(#0b0f0c, #0b0f0c) padding-box,
+    linear-gradient(135deg, rgba(34,197,94,0.6), rgba(34,197,94,0.05)) border-box;
+
+  border: 1px solid transparent;
+
+  box-shadow:
+    0 0 0 1px rgba(34,197,94,0.1),
+    0 10px 40px rgba(34,197,94,0.15);
+}
+
+.gradient-border::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+  pointer-events: none;
+}
+</style>
 >
