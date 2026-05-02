@@ -4,10 +4,10 @@ import Hero from './components/Hero.vue'
 // import Animation from './components/Animation.vue'
 // import Header from './components/Header.vue'
 import About from './components/About.vue'
+import Experience from './components/Experience.vue';
 import Project from './components/Project.vue';
 import Work from './components/Work.vue';
 import Contact from './components/Contact.vue';
-import Experience from './components/Experience.vue';
 </script>
 
 <template lang="">

@@ -1,12 +1,15 @@
 <template>
-  <section id="experience" class="py-20 text-white bg-gray-950">
-    <div class="max-w-5xl px-6 mx-auto">
+  <section id="experience" class="py-20 text-white bg-transparent">
+    <div class="max-w-6xl px-6 mx-auto lg:px-8">
       <!-- Section Header -->
       <div class="flex items-center gap-4 mb-12">
         <!-- <div class="w-12 h-px bg-gradient-to-r from-cyan-400 to-purple-500"></div> -->
-        <h2 class="text-4xl font-bold tracking-tight">
+        <h2 class="text-4xl font-bold tracking-[0.32em] uppercase">
           Experience
         </h2>
+        <!-- <span class="text-sm font-medium tracking-[0.32em] uppercase text-[#16db65]">
+            Experience
+          </span> -->
       </div>
 
       <div class="space-y-12">
@@ -74,31 +77,31 @@ import { ref } from 'vue'
 
 const experiences = ref([
   {
-    period: "JAN 2025 - PRESENT",
+    period: "NOV 2023 - DEC 2025",
     location: "Chattogram, Bangladesh",
-    role: "Senior Frontend Developer",
-    company: "TechNova Solutions",
-    companyLink: "https://technova.com",
-    description: "Leading the frontend architecture for multiple SaaS products. Built responsive web applications using Vue.js and Tailwind CSS, improving performance by 40%.",
-    technologies: ["Vue.js", "TypeScript", "Tailwind CSS", "Pinia", "Vite", "Figma"]
+    role: "UI/UX Designer",
+    company: "Iconic Solutions (PVT) Ltd.",
+    companyLink: "http://www.iconicsolutionz.com/",
+    description: "Sole designer leading UX/UI for multiple SaaS and CRM products, including dashboards and mobile applications. Owned the full design lifecycle—user research, wireframing, prototyping, and high-fidelity mockups. Contributed to additional projects across the product suite, ensuring consistent design standards and user-centered solutions.",
+    technologies: ["Figma", "Adobe XD"]
   },
   {
-    period: "JUN 2023 - DEC 2024",
-    location: "Remote",
-    role: "Frontend Developer",
-    company: "PixelCraft Agency",
-    companyLink: "#",
-    description: "Developed modern, high-performance websites and web applications for various clients. Specialized in creating pixel-perfect, accessible user interfaces.",
-    technologies: ["Vue 3", "Nuxt.js", "Tailwind", "JavaScript", "GSAP"]
+    period: "NOV 2023 - DEC 2025",
+    location: "Chattogram, Bangladesh",
+    role: "Graphic Designer",
+    company: "Iconic Solutions (PVT) Ltd.",
+    companyLink: "http://www.iconicsolutionz.com/",
+    description: "Produced digital marketing assets including social media posters, thumbnails, and promotional graphics. Maintained brand consistency across all visual content while meeting tight deadlines for ongoing campaigns.",
+    technologies: ["Adobe Illustrator", "Adobe Photoshop", "Adobe InDesign", "Canva"]
   },
   {
-    period: "MAR 2022 - MAY 2023",
-    location: "Dhaka, Bangladesh",
-    role: "Junior Web Developer",
-    company: "BrightFuture IT",
-    companyLink: "#",
-    description: "Worked on full-stack web applications, focusing on frontend development with React and Vue. Collaborated with designers and backend teams to deliver quality products.",
-    technologies: ["Vue.js", "React", "Laravel", "Bootstrap", "MySQL"]
+    period: "NOV 2023 - DEC 2025",
+    location: "Chattogram, Bangladesh",
+    role: "Web Designer & Frontend Developer",
+    company: "Iconic Solutions (PVT) Ltd.",
+    companyLink: "http://www.iconicsolutionz.com/",
+    description: "Contributed to CRM frontend development and independently built client-facing websites including email signatures, portfolio sites, and a real estate platform. Translated designs into responsive, functional interfaces while collaborating with backend teams on integrated solutions.",
+    technologies: ["Vue.js", "Tailwind CSS", "Laravel", "Bootstrap", "MySQL", "HTML", "CSS", "JavaScript", "Git", "GitHub"]
   }
 ])
 </script>
