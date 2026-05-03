@@ -1,7 +1,7 @@
 <script setup>
 import Hero from './components/Hero.vue'
 // import Hero2 from './components/Hero2.vue'
-// import Animation from './components/Animation.vue'
+import Skill from './components/Skill.vue'
 // import Header from './components/Header.vue'
 import About from './components/About.vue'
 import Experience from './components/Experience.vue';
@@ -16,12 +16,12 @@ import Contact from './components/Contact.vue';
     <!-- <div class="absolute -left-20 bottom-20 h-52 w-52 rounded-full bg-[#0eb454]/15 blur-3xl"></div> -->
     <Hero/>
     <!-- <Hero2/> -->
-    <!-- <Animation/> -->
     
     <!-- <Header /> -->
     <About/>
     <Experience/>
     <Project/>
+    <Skill/>
     <Work/>
     <Contact/>
   </div>

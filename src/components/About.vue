@@ -50,17 +50,25 @@
               I design things, then I build them.
             </p>
             <p>
-Most days I'm somewhere between Figma and VS Code—toggling between user flows, social media assets, and Vue components. I started in graphic design making posters and thumbnails, got obsessed with how people actually use software, fell into UI/UX designing SaaS dashboards and CRMs solo, and eventually got tired of handing off files I couldn't control. So I learned to code the frontend too.
+              Most days I'm somewhere between Figma and VS Code—toggling between user flows, social media assets, and
+              Vue components. I started in graphic design making posters and thumbnails, got obsessed with how people
+              actually use software, fell into UI/UX designing SaaS dashboards and CRMs solo, and eventually got tired
+              of handing off files I couldn't control. So I learned to code the frontend too.
             </p>
             <p>
-              Over the past couple of years, I've been the go-to design person wearing multiple hats. Built CRM interfaces from scratch, shipped a real estate site, knocked out email signatures, and kept social feeds looking sharp. No translation layers, no "dev said it's impossible"—if something felt off, I fixed it in the layout or the CSS, whichever was faster.
+              Over the past couple of years, I've been the go-to design person wearing multiple hats. Built CRM
+              interfaces from scratch, shipped a real estate site, knocked out email signatures, and kept social feeds
+              looking sharp. No translation layers, no "dev said it's impossible"—if something felt off, I fixed it in
+              the layout or the CSS, whichever was faster.
 
             </p>
             <p>
-              I care about stuff that works for real humans, not just looks good in a portfolio shot. Clean typography, dashboards that don't overwhelm, accessible contrast, and code that doesn't collapse on mobile.
+              I care about stuff that works for real humans, not just looks good in a portfolio shot. Clean typography,
+              dashboards that don't overwhelm, accessible contrast, and code that doesn't collapse on mobile.
             </p>
             <p>
-              When I'm not pushing pixels or hunting a z-index bug, I'm probably over-analyzing why that one app's onboarding felt so smooth.
+              When I'm not pushing pixels or hunting a z-index bug, I'm probably over-analyzing why that one app's
+              onboarding felt so smooth.
             </p>
             <p>
               Let's make something that looks great and actually ships.
