@@ -89,12 +89,12 @@ const skillCategories = ref([
     title: 'UX Design',
     icon: 'fa-solid fa-users-viewfinder',
     skills: [
-      { name: 'User Research', icon: 'fa-solid fa-magnifying-glass-user', color: '#10b981' },
+      { name: 'User Research', icon: 'fa-solid fa-magnifying-glass', color: '#10b981' },
       { name: 'User Flows', icon: 'fa-solid fa-route', color: '#10b981' },
       { name: 'Usability Testing', icon: 'fa-solid fa-vial', color: '#10b981' },
       { name: 'Information Architecture', icon: 'fa-solid fa-sitemap', color: '#10b981' },
       { name: 'Journey Mapping', icon: 'fa-solid fa-map-location-dot', color: '#10b981' },
-      { name: 'A/B Testing', icon: 'fa-solid fa-flask', color: '#10b981' }
+      // { name: 'A/B Testing', icon: 'fa-solid fa-flask', color: '#10b981' }
     ]
   },
   {
@@ -114,14 +114,14 @@ const skillCategories = ref([
     icon: 'fa-solid fa-code',
     skills: [
       { name: 'Vue.js', icon: 'fa-brands fa-vuejs', color: '#4FC08D' },
-      { name: 'React.js', icon: 'fa-brands fa-react', color: '#61DAFB' },
-      { name: 'Next.js', icon: 'fa-solid fa-n', color: '#ffffff' },
+      // { name: 'React.js', icon: 'fa-brands fa-react', color: '#61DAFB' },
+      // { name: 'Next.js', icon: 'fa-solid fa-n', color: '#ffffff' },
       { name: 'Tailwind CSS', icon: 'fa-solid fa-wind', color: '#06B6D4' },
       { name: 'HTML5', icon: 'fa-brands fa-html5', color: '#E34F26' },
       { name: 'CSS3', icon: 'fa-brands fa-css3-alt', color: '#1572B6' },
       { name: 'JavaScript', icon: 'fa-brands fa-js', color: '#F7DF1E' },
-      { name: 'TypeScript', icon: 'fa-solid fa-t', color: '#3178C6' },
-      { name: 'SASS', icon: 'fa-brands fa-sass', color: '#CC6699' },
+      // { name: 'TypeScript', icon: 'fa-solid fa-t', color: '#3178C6' },
+      // { name: 'SASS', icon: 'fa-brands fa-sass', color: '#CC6699' },
       { name: 'Bootstrap', icon: 'fa-brands fa-bootstrap', color: '#7952B3' }
     ]
   },
@@ -130,34 +130,34 @@ const skillCategories = ref([
     icon: 'fa-solid fa-database',
     skills: [
       { name: 'Node.js', icon: 'fa-brands fa-node', color: '#339933' },
-      { name: 'Express.js', icon: 'fa-solid fa-server', color: '#ffffff' },
+      // { name: 'Express.js', icon: 'fa-solid fa-server', color: '#ffffff' },
       { name: 'Laravel', icon: 'fa-brands fa-laravel', color: '#FF2D20' },
       { name: 'MySQL', icon: 'fa-solid fa-database', color: '#4479A1' },
-      { name: 'MongoDB', icon: 'fa-solid fa-leaf', color: '#47A248' },
-      { name: 'REST APIs', icon: 'fa-solid fa-network-wired', color: '#10b981' }
+      // { name: 'MongoDB', icon: 'fa-solid fa-leaf', color: '#47A248' },
+      // { name: 'REST APIs', icon: 'fa-solid fa-network-wired', color: '#10b981' }
     ]
   },
-  {
-    title: 'Mobile Development',
-    icon: 'fa-solid fa-mobile-screen',
-    skills: [
-      { name: 'Flutter', icon: 'fa-solid fa-paper-plane', color: '#02569B' },
-      { name: 'GetX', icon: 'fa-solid fa-rocket', color: '#8E24AA' },
-      { name: 'Dart', icon: 'fa-solid fa-bullseye', color: '#0175C2' },
-      { name: 'Responsive Design', icon: 'fa-solid fa-mobile-retro', color: '#10b981' },
-      { name: 'Mobile UI', icon: 'fa-solid fa-hand-pointer', color: '#10b981' }
-    ]
-  },
+  // {
+    // title: 'Mobile Development',
+    // icon: 'fa-solid fa-mobile-screen',
+    // skills: [
+    //   { name: 'Flutter', icon: 'fa-solid fa-paper-plane', color: '#02569B' },
+    //   { name: 'GetX', icon: 'fa-solid fa-rocket', color: '#8E24AA' },
+    //   { name: 'Dart', icon: 'fa-solid fa-bullseye', color: '#0175C2' },
+    //   { name: 'Responsive Design', icon: 'fa-solid fa-mobile-retro', color: '#10b981' },
+    //   { name: 'Mobile UI', icon: 'fa-solid fa-hand-pointer', color: '#10b981' }
+    // ]
+  // },
   {
     title: 'Tools & Workflow',
     icon: 'fa-solid fa-toolbox',
     skills: [
       { name: 'Git', icon: 'fa-brands fa-git-alt', color: '#F05032' },
       { name: 'GitHub', icon: 'fa-brands fa-github', color: '#ffffff' },
-      { name: 'Docker', icon: 'fa-brands fa-docker', color: '#2496ED' },
+      // { name: 'Docker', icon: 'fa-brands fa-docker', color: '#2496ED' },
       { name: 'VS Code', icon: 'fa-solid fa-code', color: '#007ACC' },
       { name: 'NPM', icon: 'fa-brands fa-npm', color: '#CB3837' },
-      { name: 'Webpack', icon: 'fa-solid fa-box-open', color: '#8DD6F9' }
+      // { name: 'Webpack', icon: 'fa-solid fa-box-open', color: '#8DD6F9' }
     ]
   },
   {
