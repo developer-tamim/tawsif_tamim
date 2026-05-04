@@ -1,13 +1,13 @@
 <template>
-  <section class="min-h-screen bg-[#0a0c10] py-24 px-4 relative overflow-hidden">
+  <section class="relative min-h-screen px-4 py-24 overflow-hidden">
     <!-- Subtle background pattern -->
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 32px 32px;"></div>
 
     <div class="relative z-10 mx-auto max-w-7xl">
       <!-- Section Header -->
       <div class="mb-20 text-center">
-        <p class="text-emerald-400 text-sm font-medium tracking-[0.2em] uppercase mb-4">What I Do</p>
-        <h2 class="text-5xl font-bold tracking-tight text-white">
+        <p class="text-emerald-400 text-sm font-medium tracking-[0.32em] uppercase mb-4">What I Do</p>
+        <h2 class="text-5xl font-bold text-white">
           Skills & Expertise
         </h2>
         <div class="w-16 h-1 mx-auto mt-6 rounded-full bg-emerald-500"></div>
