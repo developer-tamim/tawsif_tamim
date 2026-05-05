@@ -1,17 +1,17 @@
 <template>
-  <div class="min-h-screen text-gray-900 bg-gray-50">
+  <div class="min-h-screen text-gray-100 bg-gray-950">
     <div class="min-h-screen bg-mesh">
       <div class="px-6 py-24 mx-auto max-w-7xl lg:px-8">
 
         <!-- Header -->
         <div class="mb-24 text-center">
-          <span class="inline-block px-5 py-2 mb-6 text-xs font-medium tracking-widest uppercase border border-gray-300 rounded-full text-primary">
+          <span class="inline-block px-5 py-2 mb-6 text-xs font-medium tracking-widest uppercase border border-gray-700 rounded-full text-primary">
             What I Do
           </span>
           <h2 class="mb-6 text-5xl font-bold tracking-tighter md:text-7xl">
             <span class="gradient-text">Creative</span> Services
           </h2>
-          <p class="max-w-2xl mx-auto text-xl leading-relaxed text-gray-600">
+          <p class="max-w-2xl mx-auto text-xl leading-relaxed text-gray-400">
             Transforming ideas into stunning digital experiences. Click any card to explore my work.
           </p>
         </div>
@@ -26,7 +26,7 @@
             class="cursor-pointer card-3d group"
             :style="tiltStyles.uiux"
           >
-            <div class="relative h-full p-8 overflow-hidden bg-white border border-gray-100 shadow-xl rounded-3xl hover:shadow-2xl">
+            <div class="relative h-full p-8 overflow-hidden bg-gray-900 border border-gray-800 shadow-xl rounded-3xl hover:shadow-2xl hover:shadow-primary/10">
               <div class="card-inner">
                 <div class="flex items-center justify-center w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br from-primary to-secondary float-animation">
                   <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -35,7 +35,7 @@
                 </div>
 
                 <h3 class="mb-3 text-2xl font-bold transition-colors group-hover:text-primary">UI/UX Design</h3>
-                <p class="mb-6 leading-relaxed text-gray-600">
+                <p class="mb-6 leading-relaxed text-gray-400">
                   Crafting intuitive interfaces and seamless user experiences that delight and convert.
                 </p>
 
@@ -64,7 +64,7 @@
             class="cursor-pointer card-3d group"
             :style="tiltStyles.graphics"
           >
-            <div class="relative h-full p-8 overflow-hidden bg-white border border-gray-100 shadow-xl rounded-3xl hover:shadow-2xl">
+            <div class="relative h-full p-8 overflow-hidden bg-gray-900 border border-gray-800 shadow-xl rounded-3xl hover:shadow-2xl hover:shadow-primary/10">
               <div class="card-inner">
                 <div class="flex items-center justify-center w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br from-accent to-orange-500 float-animation" style="animation-delay: 0.5s;">
                   <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -73,7 +73,7 @@
                 </div>
 
                 <h3 class="mb-3 text-2xl font-bold transition-colors group-hover:text-accent">Graphics Design</h3>
-                <p class="mb-6 leading-relaxed text-gray-600">
+                <p class="mb-6 leading-relaxed text-gray-400">
                   Visual storytelling through bold branding, illustrations, and marketing materials.
                 </p>
 
@@ -102,7 +102,7 @@
             class="cursor-pointer card-3d group"
             :style="tiltStyles.frontend"
           >
-            <div class="relative h-full p-8 overflow-hidden bg-white border border-gray-100 shadow-xl rounded-3xl hover:shadow-2xl">
+            <div class="relative h-full p-8 overflow-hidden bg-gray-900 border border-gray-800 shadow-xl rounded-3xl hover:shadow-2xl hover:shadow-primary/10">
               <div class="card-inner">
                 <div class="flex items-center justify-center w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 float-animation" style="animation-delay: 1s;">
                   <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,7 +111,7 @@
                 </div>
 
                 <h3 class="mb-3 text-2xl font-bold transition-colors group-hover:text-emerald-500">Frontend Dev</h3>
-                <p class="mb-6 leading-relaxed text-gray-600">
+                <p class="mb-6 leading-relaxed text-gray-400">
                   Building fast, responsive, and interactive web applications with modern technologies.
                 </p>
 
@@ -194,11 +194,11 @@ const handleMouseLeave = (cardId) => {
 
 .bg-mesh {
   background: 
-    radial-gradient(at 40% 20%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-    radial-gradient(at 80% 0%, rgba(139, 92, 246, 0.1) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, rgba(236, 72, 153, 0.1) 0px, transparent 50%),
-    radial-gradient(at 80% 50%, rgba(99, 102, 241, 0.1) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+    radial-gradient(at 40% 20%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(139, 92, 246, 0.06) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(236, 72, 153, 0.06) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, rgba(99, 102, 241, 0.06) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(139, 92, 246, 0.08) 0px, transparent 50%);
 }
 
 @keyframes float {
