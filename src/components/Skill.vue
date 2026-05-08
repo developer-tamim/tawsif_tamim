@@ -1,5 +1,5 @@
 <template>
-  <section class="relative min-h-screen px-4 py-24 overflow-hidden">
+  <section id="skill" class="relative min-h-screen px-4 py-24 overflow-hidden">
     <!-- Subtle background pattern -->
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 32px 32px;"></div>
 

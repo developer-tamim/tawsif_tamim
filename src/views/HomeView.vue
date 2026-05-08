@@ -14,8 +14,8 @@ import Contact from '../components/Contact.vue'
     <Navbar />
     <Hero />
     <About />
-    <Skill />
     <Experience />
+    <Skill />
     <Work />
     <Project />
     <Contact />

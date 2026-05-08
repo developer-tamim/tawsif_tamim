@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-2 pb-12 sm:pb-20 hero-wrapper">
+  <section id="hero" class="pt-2 pb-12 sm:pb-20 hero-wrapper">
     <Navbar />
 
     <div class="relative z-10 max-w-6xl px-4 pt-4 mx-auto sm:px-6 sm:pt-5">
@@ -98,7 +98,7 @@
 
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>

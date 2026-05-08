@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen text-gray-100 bg-gray-950">
+  <section id="project" class="min-h-screen text-gray-100 bg-gray-950">
     <div class="min-h-screen bg-mesh">
       <div class="px-6 py-24 mx-auto max-w-7xl lg:px-8">
 
@@ -135,7 +135,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>

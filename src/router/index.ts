@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import UiuxView from '../components/projectCard/UiuxView.vue'
+import Skill from '../components/Skill.vue'
 import GraphicsView from '../components/projectCard/GraphicsView.vue'
 import FrontendView from '../components/projectCard/FrontendView.vue'
 
@@ -11,6 +12,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView
+    },
+    {
+      path: '/skill',
+      name: 'skill',
+      component: Skill
     },
     {
       path: '/uiux',

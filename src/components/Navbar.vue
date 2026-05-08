@@ -105,8 +105,8 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const navItems = [
   { label: 'HOME', href: '#home' },
   { label: 'ABOUT', href: '#about' },
-  { label: 'SKILL', href: '#skill' },
   { label: 'EXPERIENCE', href: '#experience' },
+  { label: 'SKILL', href: '#skill' },
   { label: 'PROJECT', href: '#project' },
   { label: 'CONTACT', href: '#contact' }
 ]
@@ -137,7 +137,7 @@ onUnmounted(() => {
 .backdrop-layer {
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  background: rgba(10, 15, 12, 0.4);
+  background: rgba(32, 53, 40, 0.4);
   animation: fadeIn 0.3s ease forwards;
 }
 
