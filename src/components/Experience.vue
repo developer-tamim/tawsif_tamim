@@ -1,65 +1,58 @@
 <template>
-  <section id="experience" class="py-20 text-white bg-transparent">
-    <div class="max-w-6xl px-6 mx-auto lg:px-8">
+  <section id="experience" class="py-12 text-white bg-transparent sm:py-16 md:py-20">
+    <div class="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
       <!-- Section Header -->
-      <div class="flex items-center gap-4 mb-12">
-        <!-- <div class="w-12 h-px bg-gradient-to-r from-cyan-400 to-purple-500"></div> -->
-        <h2 class="text-4xl font-bold tracking-[0.32em] uppercase">
+      <div class="flex items-center gap-3 mb-8 sm:gap-4 sm:mb-10 md:mb-12">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-[0.15em] sm:tracking-[0.25em] md:tracking-[0.32em] uppercase">
           Experience
         </h2>
-        <!-- <span class="text-sm font-medium tracking-[0.32em] uppercase text-[#16db65]">
-            Experience
-          </span> -->
       </div>
 
-      <div class="space-y-12">
+      <div class="space-y-8 sm:space-y-10 md:space-y-12">
         <!-- Experience Item -->
         <div
           v-for="(exp, index) in experiences"
           :key="index"
-          class="relative pl-8 transition-all duration-300 border-l-2 border-gray-800 group hover:border-[#16db65]"
+          class="relative pl-6 sm:pl-8 transition-all duration-300 border-l-2 border-gray-800 group hover:border-[#16db65]"
         >
-          <!-- Timeline Dot -->
-          <!-- <div class="absolute -left-[5px] top-2 w-3 h-3 rounded-full bg-gray-800 group-hover:bg-cyan-400 transition-colors duration-300"></div> -->
-
-          <div class="grid gap-6 md:grid-cols-12">
+          <div class="grid gap-4 sm:gap-6 md:grid-cols-12">
             <!-- Date -->
             <div class="md:col-span-3">
-              <div class="font-mono text-sm tracking-widest text-[#16db65]">
+              <div class="font-mono text-xs sm:text-sm tracking-widest text-[#16db65]">
                 {{ exp.period }}
               </div>
-              <div class="mt-1 text-sm text-gray-400">
+              <div class="mt-0.5 sm:mt-1 text-xs sm:text-sm text-gray-400">
                 {{ exp.location }}
               </div>
             </div>
 
             <!-- Content -->
             <div class="md:col-span-9">
-              <div class="flex flex-wrap items-center gap-3 mb-2">
-                <h3 class="text-2xl font-semibold text-white">
+              <div class="flex flex-wrap items-center gap-2 mb-2 sm:gap-3">
+                <h3 class="text-lg font-semibold text-white sm:text-xl md:text-2xl">
                   {{ exp.role }}
                 </h3>
-                <span class="text-gray-400">•</span>
+                <span class="hidden text-gray-400 sm:inline">•</span>
                 <a
                   :href="exp.companyLink"
                   target="_blank"
-                  class="font-medium transition-colors text-[#09b94f] hover:text-[#16db65]"
+                  class="text-sm sm:text-base font-medium transition-colors text-[#09b94f] hover:text-[#16db65]"
                 >
                   {{ exp.company }}
                 </a>
               </div>
 
               <!-- Description -->
-              <p class="mb-4 leading-relaxed text-gray-300">
+              <p class="mb-3 text-sm leading-relaxed text-gray-300 sm:mb-4 sm:text-base">
                 {{ exp.description }}
               </p>
 
               <!-- Technologies -->
-              <div class="flex flex-wrap gap-2">
+              <div class="flex flex-wrap gap-1.5 sm:gap-2">
                 <span
                   v-for="tech in exp.technologies"
                   :key="tech"
-                  class="px-3 py-1 text-xs font-medium transition-colors bg-gray-900 border border-gray-700 rounded-full text-[#16db65] hover:border-[#16db65]"
+                  class="px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-medium transition-colors bg-gray-900 border border-gray-700 rounded-full text-[#16db65] hover:border-[#16db65]"
                 >
                   {{ tech }}
                 </span>
@@ -107,8 +100,20 @@ const experiences = ref([
 </script>
 
 <style scoped>
-/* Optional: Add subtle hover glow effect */
-.group:hover {
-  transform: translateX(4px);
+/* Subtle hover glow effect - disabled on touch devices via media query */
+@media (hover: hover) {
+  .group:hover {
+    transform: translateX(4px);
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .group {
+    transition: none;
+  }
+  .group:hover {
+    transform: none;
+  }
 }
 </style>
