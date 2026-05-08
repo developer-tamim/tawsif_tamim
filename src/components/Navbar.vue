@@ -14,12 +14,38 @@
     <div class="flex items-center justify-between px-6 md:px-8 h-[60px]">
 
       <!-- Logo -->
-      <span
-        @click="scrollToSection('hero')"
-        class="text-2xl font-bold tracking-tight text-[#16db65] cursor-pointer"
-      >
-        Tawsif <span class="text-white">Tamim</span>
-      </span>
+<a
+  @click.prevent="scrollToSection('hero')"
+  href="#hero"
+  class="flex items-center gap-2 cursor-pointer"
+>
+  <img
+    src="../assets/logo/my_logo.png"
+    alt="Tawsif Tamim"
+    class="object-contain w-auto h-8"
+  />
+  <span class="text-2xl font-bold tracking-tight text-[#16db65]">
+    Tawsif <span class="text-white">Tamim</span>
+  </span>
+</a>
+
+<!-- Logo -->
+<!-- <a
+  @click.prevent="scrollToSection('hero')"
+  href="#hero"
+  class="flex items-center gap-3 cursor-pointer group"
+>
+  <div class="relative flex-shrink-0 w-10 h-10">
+    <img
+      src="../assets/logo/my_logo.png"
+      alt=""
+      class="object-contain w-full h-full"
+    />
+  </div>
+  <span class="text-2xl font-bold tracking-tight text-[#16db65] group-hover:opacity-90 transition-opacity">
+    Tawsif <span class="text-white">Tamim</span>
+  </span>
+</a> -->
 
       <!-- Desktop Menu -->
       <ul class="hidden md:flex gap-9">
