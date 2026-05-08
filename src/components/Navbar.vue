@@ -15,7 +15,7 @@
 
       <!-- Logo -->
       <span
-        @click="scrollToSection('home')"
+        @click="scrollToSection('hero')"
         class="text-2xl font-bold tracking-tight text-[#16db65] cursor-pointer"
       >
         Tawsif <span class="text-white">Tamim</span>
@@ -24,8 +24,7 @@
       <!-- Desktop Menu -->
       <ul class="hidden md:flex gap-9">
         <li v-for="item in navItems" :key="item.id">
-          
-            <a :href="`#${item.id}`"
+          <a :href="`#${item.id}`"
             @click.prevent="scrollToSection(item.id)"
             :class="[
               'relative text-sm font-semibold transition-colors duration-300',
@@ -75,15 +74,14 @@
       ]"
       style="backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);"
     >
-      <ul class="p-5 divide-y divide-white/10 backdrop-layer">
+      <ul class="p-5 divide-y divide-white/10">
         <li
           v-for="(item, index) in navItems"
           :key="item.id"
           class="py-3 menu-item"
           :style="{ transitionDelay: `${index * 70}ms` }"
         >
-          
-            <a :href="`#${item.id}`"
+          <a :href="`#${item.id}`"
             @click.prevent="scrollToSection(item.id); isMobileMenuOpen = false"
             class="block font-semibold text-white hover:text-[#16db65] transition-all duration-300"
             :class="isMobileMenuOpen
@@ -102,7 +100,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const navItems = [
-  { label: 'HOME',       id: 'home' },
+  { label: 'HOME',       id: 'hero' },
   { label: 'ABOUT',      id: 'about' },
   { label: 'EXPERIENCE', id: 'experience' },
   { label: 'SKILL',      id: 'skill' },
@@ -112,7 +110,7 @@ const navItems = [
 
 const isScrolled       = ref(false)
 const isMobileMenuOpen = ref(false)
-const activeSection    = ref('home')
+const activeSection    = ref('hero')  // Changed from 'home' to 'hero'
 
 const toggleMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
@@ -171,18 +169,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.backdrop-layer {
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  background: rgba(32, 53, 40, 0.4);
-  animation: fadeIn 0.3s ease forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; backdrop-filter: blur(0px); }
-  to   { opacity: 1; backdrop-filter: blur(18px); }
-}
-
 .menu-item a {
   transition:
     transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
