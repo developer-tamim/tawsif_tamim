@@ -82,10 +82,11 @@
 
         <!-- RIGHT SIDE - 3D Logo Card -->
         <div class="flex justify-center order-2 mt-6 hero-right sm:mt-8 md:mt-10 lg:mt-0">
-          <div class="relative w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[380px] md:max-w-[420px] lg:max-w-full px-4 sm:px-0">
+          <div
+            class="relative w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[380px] md:max-w-[420px] lg:max-w-full px-4 sm:px-0">
 
             <!-- 3D Tilt Card -->
-            <div ref="cardRef" class="relative cursor-pointer card-3d" :style="tiltStyle" @mousemove="handleMouseMove"
+            <div ref="cardRef" class="relative card-3d" :style="tiltStyle" @mousemove="handleMouseMove"
               @mouseleave="handleMouseLeave">
               <!-- Card glow border effect -->
               <div
@@ -98,20 +99,26 @@
 
                 <!-- Animated background particles -->
                 <div class="absolute inset-0 overflow-hidden pointer-events-none">
-                  <div v-for="n in 8" :key="n" class="absolute w-0.5 h-0.5 sm:w-1 sm:h-1 rounded-full bg-[#16db65]/50" :style="{
-                    left: `${10 + n * 10}%`,
-                    top: `${15 + (n % 4) * 20}%`,
-                    animation: `float-particle ${3 + n * 0.4}s ease-in-out infinite`,
-                    animationDelay: `${n * 0.3}s`
-                  }"></div>
+                  <div v-for="n in 8" :key="n" class="absolute w-0.5 h-0.5 sm:w-1 sm:h-1 rounded-full bg-[#16db65]/50"
+                    :style="{
+                      left: `${10 + n * 10}%`,
+                      top: `${15 + (n % 4) * 20}%`,
+                      animation: `float-particle ${3 + n * 0.4}s ease-in-out infinite`,
+                      animationDelay: `${n * 0.3}s`
+                    }"></div>
                 </div>
 
                 <!-- Decorative blurred orbs -->
-                <div class="absolute -top-10 -right-10 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full bg-[#16db65]/8 blur-3xl"></div>
-                <div class="absolute -bottom-8 -left-8 w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-[#0eb454]/8 blur-3xl"></div>
+                <div
+                  class="absolute -top-10 -right-10 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full bg-[#16db65]/8 blur-3xl">
+                </div>
+                <div
+                  class="absolute -bottom-8 -left-8 w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-[#0eb454]/8 blur-3xl">
+                </div>
 
                 <!-- Logo Container -->
-                <div class="relative flex items-center justify-center min-h-[180px] sm:min-h-[220px] md:min-h-[260px] lg:min-h-[300px]">
+                <div
+                  class="relative flex items-center justify-center min-h-[180px] sm:min-h-[220px] md:min-h-[260px] lg:min-h-[300px]">
                   <!-- Pulsing ring behind logo -->
                   <div
                     class="absolute w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-full border border-[#16db65]/15 animate-pulse-slow">
@@ -131,7 +138,8 @@
                   <div class="absolute icon-orbit" style="--orbit-angle: 0deg; --orbit-delay: 0s;">
                     <div
                       class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-lg sm:rounded-xl bg-[#38bdf8]/15 border border-[#38bdf8]/30 backdrop-blur-md float-icon">
-                      <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-[#38bdf8]" viewBox="0 0 24 24" fill="currentColor">
+                      <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-[#38bdf8]" viewBox="0 0 24 24"
+                        fill="currentColor">
                         <path
                           d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z" />
                       </svg>
@@ -143,7 +151,8 @@
                   <div class="absolute icon-orbit" style="--orbit-angle: 60deg; --orbit-delay: 0.5s;">
                     <div
                       class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-lg sm:rounded-xl bg-[#f05032]/15 border border-[#f05032]/30 backdrop-blur-md float-icon">
-                      <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-[#f05032]" viewBox="0 0 24 24" fill="currentColor">
+                      <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-[#f05032]" viewBox="0 0 24 24"
+                        fill="currentColor">
                         <path
                           d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.659 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.678-1.342-.396-2.009L7.611 3.527 4.647 6.491c-.603.605-.603 1.585 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l6.232-6.227c.605-.603.605-1.582 0-2.187z" />
                       </svg>
@@ -152,21 +161,24 @@
                   </div>
 
                   <!-- Adobe Photoshop -->
-<div class="absolute icon-orbit" style="--orbit-angle: 120deg; --orbit-delay: 1s;">
-  <div
-    class="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#31a8ff]/15 border border-[#31a8ff]/30 backdrop-blur-md float-icon">
-    <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#31a8ff]" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M0 0v24h24V0H0zm13.1 6.5c2.3 0 3.9 1.4 3.9 3.6 0 2.3-1.7 3.8-4 3.8h-1.3v3.6H9.8V6.5h3.3zm-1.4 5.6h1.1c1.1 0 1.9-.6 1.9-1.9 0-1.2-.7-1.9-1.8-1.9h-1.2v3.8z"/>
-    </svg>
-  </div>
-</div>
+                  <div class="absolute icon-orbit" style="--orbit-angle: 120deg; --orbit-delay: 1s;">
+                    <div
+                      class="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#31a8ff]/15 border border-[#31a8ff]/30 backdrop-blur-md float-icon">
+                      <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#31a8ff]" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                          d="M0 0v24h24V0H0zm13.1 6.5c2.3 0 3.9 1.4 3.9 3.6 0 2.3-1.7 3.8-4 3.8h-1.3v3.6H9.8V6.5h3.3zm-1.4 5.6h1.1c1.1 0 1.9-.6 1.9-1.9 0-1.2-.7-1.9-1.8-1.9h-1.2v3.8z" />
+                      </svg>
+                    </div>
+                  </div>
 
                   <!-- Adobe Illustrator -->
                   <div class="absolute icon-orbit" style="--orbit-angle: 180deg; --orbit-delay: 1.5s;">
                     <div
                       class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-lg sm:rounded-xl bg-[#ff9a00]/15 border border-[#ff9a00]/30 backdrop-blur-md float-icon">
-                      <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-[#ff9a00]" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M0 .3v23.4h24V.3H0zm1 1h22v21.4H1V1.3zm5.784 15.4l.65-2.1h3.3l.65 2.1h1.5l-3.1-9.2h-1.4l-3.1 9.2h1.4zm1.85-6l1.15 3.7h-2.3l1.15-3.7zm6.966 6V8.5h-1.4v8.2h1.4zm-.7-9.6c.4 0 .7-.3.7-.7s-.3-.7-.7-.7-.7.3-.7.7.3.7.7.7z"/>
+                      <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-[#ff9a00]" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                          d="M0 .3v23.4h24V.3H0zm1 1h22v21.4H1V1.3zm5.784 15.4l.65-2.1h3.3l.65 2.1h1.5l-3.1-9.2h-1.4l-3.1 9.2h1.4zm1.85-6l1.15 3.7h-2.3l1.15-3.7zm6.966 6V8.5h-1.4v8.2h1.4zm-.7-9.6c.4 0 .7-.3.7-.7s-.3-.7-.7-.7-.7.3-.7.7.3.7.7.7z" />
                       </svg>
                     </div>
                   </div>
@@ -175,7 +187,8 @@
                   <div class="absolute icon-orbit" style="--orbit-angle: 240deg; --orbit-delay: 2s;">
                     <div
                       class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-lg sm:rounded-xl bg-[#f24e1e]/15 border border-[#f24e1e]/30 backdrop-blur-md float-icon">
-                      <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-[#f24e1e]" viewBox="0 0 24 24" fill="currentColor">
+                      <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-[#f24e1e]" viewBox="0 0 24 24"
+                        fill="currentColor">
                         <path
                           d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zM8.148 24c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.588 4.539zm-.001-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02c1.692 0 3.069-1.382 3.069-3.069v-2.97H8.147zM8.148 8.981c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981H8.148zm-.001-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V1.471H8.147zM8.148 15.02c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.981H8.148zm-.001-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V7.51H8.147zM15.852 15.02c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49 4.49 2.014 4.49 4.49-2.014 4.49-4.49 4.49zm0-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019 3.019-1.355 3.019-3.019-1.354-3.019-3.019-3.019z" />
                       </svg>
@@ -186,7 +199,8 @@
                   <div class="absolute icon-orbit" style="--orbit-angle: 300deg; --orbit-delay: 2.5s;">
                     <div
                       class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-lg sm:rounded-xl bg-[#42b883]/15 border border-[#42b883]/30 backdrop-blur-md float-icon">
-                      <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-[#42b883]" viewBox="0 0 24 24" fill="currentColor">
+                      <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-[#42b883]" viewBox="0 0 24 24"
+                        fill="currentColor">
                         <path
                           d="M24,1.61H14.06L12,5.16,9.94,1.61H0L12,22.39ZM12,14.08,5.16,2.23H9.59L12,6.41l2.41-4.18h4.43Z" />
                       </svg>
@@ -206,9 +220,11 @@
             <div
               class="absolute -top-3 -right-3 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 border border-[#16db65]/20 rounded-lg rotate-12 float-animation hidden sm:block"
               style="animation-delay: 1s;"></div>
-            <div class="absolute -bottom-4 -left-4 w-5 h-5 sm:w-6 sm:h-6 bg-[#16db65]/10 rounded-full float-animation hidden sm:block"
+            <div
+              class="absolute -bottom-4 -left-4 w-5 h-5 sm:w-6 sm:h-6 bg-[#16db65]/10 rounded-full float-animation hidden sm:block"
               style="animation-delay: 2s;"></div>
-            <div class="absolute hidden w-3 h-3 border rounded-full sm:w-4 sm:h-4 top-1/2 -right-6 border-white/10 float-animation md:block"
+            <div
+              class="absolute hidden w-3 h-3 border rounded-full sm:w-4 sm:h-4 top-1/2 -right-6 border-white/10 float-animation md:block"
               style="animation-delay: 1.5s;"></div>
 
           </div>

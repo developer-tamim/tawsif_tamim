@@ -54,7 +54,7 @@
         class="md:hidden absolute top-[calc(100%+12px)] left-0 w-full z-50 rounded-2xl overflow-hidden border border-white/10"
         style="backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); background: rgba(8, 12, 10, 0.85);">
         <ul class="px-2 py-2">
-          <li v-for="(item, index) in navItems" :key="item.id">
+          <li v-for="(item) in navItems" :key="item.id">
 
             <a :href="`#${item.id}`" @click.prevent="scrollToSection(item.id); isMobileMenuOpen = false"
               class="flex items-center justify-between px-4 py-3 text-sm font-semibold transition-all duration-200 rounded-xl"

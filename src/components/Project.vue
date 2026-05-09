@@ -45,12 +45,12 @@
                   <span class="px-3 py-1 text-xs font-medium rounded-full bg-accent/10 text-accent">Prototyping</span>
                 </div>
 
-                <div class="flex items-center gap-2 font-semibold transition-all text-primary group-hover:gap-3">
+                <!-- <div class="flex items-center gap-2 font-semibold transition-all text-primary group-hover:gap-3">
                   <span>Explore Projects</span>
                   <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </div>
+                </div> -->
               </div>
 
               <div class="absolute w-40 h-40 transition-transform duration-700 rounded-full -bottom-20 -right-20 bg-gradient-to-br from-primary/20 to-secondary/20 blur-3xl group-hover:scale-150"></div>
@@ -83,12 +83,12 @@
                   <span class="px-3 py-1 text-xs font-medium text-pink-500 rounded-full bg-pink-500/10">Branding</span>
                 </div>
 
-                <div class="flex items-center gap-2 font-semibold transition-all text-accent group-hover:gap-3">
+                <!-- <div class="flex items-center gap-2 font-semibold transition-all text-accent group-hover:gap-3">
                   <span>Explore Projects</span>
                   <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </div>
+                </div> -->
               </div>
 
               <div class="absolute w-40 h-40 transition-transform duration-700 rounded-full -bottom-20 -right-20 bg-gradient-to-br from-accent/20 to-orange-500/20 blur-3xl group-hover:scale-150"></div>
@@ -121,12 +121,12 @@
                   <span class="px-3 py-1 text-xs font-medium rounded-full bg-cyan-500/10 text-cyan-500">TypeScript</span>
                 </div>
 
-                <div class="flex items-center gap-2 font-semibold transition-all text-emerald-500 group-hover:gap-3">
+                <!-- <div class="flex items-center gap-2 font-semibold transition-all text-emerald-500 group-hover:gap-3">
                   <span>Explore Projects</span>
                   <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </div>
+                </div> -->
               </div>
 
               <div class="absolute w-40 h-40 transition-transform duration-700 rounded-full -bottom-20 -right-20 bg-gradient-to-br from-emerald-500/20 to-teal-600/20 blur-3xl group-hover:scale-150"></div>
