@@ -1,124 +1,79 @@
 <template>
-  <nav
-    :class="[
-      'fixed top-4 left-1/2 -translate-x-1/2 z-50 rounded-full transition-all duration-300',
-      'w-[calc(100%-2rem)] max-w-[1100px]',
-      'border border-white/20',
-      'shadow-[0_8px_32px_rgba(0,0,0,0.37),inset_0_0_0_1px_rgba(255,255,255,0.1)]',
-      isScrolled
-        ? 'bg-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_0_0_1px_rgba(255,255,255,0.15)]'
-        : 'bg-white/10'
-    ]"
-    style="backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);"
-  >
+  <nav :class="[
+    'fixed top-4 left-1/2 -translate-x-1/2 z-50 rounded-full transition-all duration-300',
+    'w-[calc(100%-2rem)] max-w-[1100px]',
+    'border border-white/20',
+    'shadow-[0_8px_32px_rgba(0,0,0,0.37),inset_0_0_0_1px_rgba(255,255,255,0.1)]',
+    isScrolled
+      ? 'bg-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_0_0_1px_rgba(255,255,255,0.15)]'
+      : 'bg-white/10'
+  ]" style="backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
     <div class="flex items-center justify-between px-6 md:px-8 h-[60px]">
 
       <!-- Logo -->
-<a
-  @click.prevent="scrollToSection('hero')"
-  href="#hero"
-  class="flex items-center gap-2 cursor-pointer"
->
-  <img
-    src="../assets/logo/my_logo.png"
-    alt="Tawsif Tamim"
-    class="object-contain w-auto h-8"
-  />
-  <span class="text-2xl font-bold tracking-tight text-[#16db65]">
-    Tawsif <span class="text-white">Tamim</span>
-  </span>
-</a>
-
-<!-- Logo -->
-<!-- <a
-  @click.prevent="scrollToSection('hero')"
-  href="#hero"
-  class="flex items-center gap-3 cursor-pointer group"
->
-  <div class="relative flex-shrink-0 w-10 h-10">
-    <img
-      src="../assets/logo/my_logo.png"
-      alt=""
-      class="object-contain w-full h-full"
-    />
-  </div>
-  <span class="text-2xl font-bold tracking-tight text-[#16db65] group-hover:opacity-90 transition-opacity">
-    Tawsif <span class="text-white">Tamim</span>
-  </span>
-</a> -->
+      <a @click.prevent="scrollToSection('hero')" href="#hero" class="flex items-center gap-2 cursor-pointer">
+        <img src="../assets/logo/my_logo.png" alt="Tawsif Tamim" class="object-contain w-auto h-8" />
+        <span class="text-2xl font-bold tracking-tight text-[#16db65]">
+          Tawsif <span class="text-white">Tamim</span>
+        </span>
+      </a>
 
       <!-- Desktop Menu -->
       <ul class="hidden md:flex gap-9">
         <li v-for="item in navItems" :key="item.id">
-          <a :href="`#${item.id}`"
-            @click.prevent="scrollToSection(item.id)"
-            :class="[
-              'relative text-sm font-semibold transition-colors duration-300',
-              activeSection === item.id
-                ? 'text-[#16db65]'
-                : 'text-white hover:text-[#16db65]'
-            ]"
-          >
+
+          <a :href="`#${item.id}`" @click.prevent="scrollToSection(item.id)" :class="[
+            'relative text-sm font-semibold transition-colors duration-300',
+            activeSection === item.id
+              ? 'text-[#16db65]'
+              : 'text-white hover:text-[#16db65]'
+          ]">
             {{ item.label }}
           </a>
         </li>
       </ul>
 
       <!-- Mobile Toggle -->
-      <button @click="toggleMenu" class="md:hidden flex flex-col gap-[5px]">
-        <span
-          v-for="i in 3"
-          :key="i"
-          class="block w-6 h-0.5 bg-[#16db65] transition-all duration-300"
-          :class="{
-            'rotate-45 translate-y-[7px]': isMobileMenuOpen && i === 1,
-            'opacity-0': isMobileMenuOpen && i === 2,
-            '-rotate-45 -translate-y-[7px]': isMobileMenuOpen && i === 3
-          }"
-        />
+      <button @click="toggleMenu" class="p-2 -mr-2 md:hidden" aria-label="Toggle menu">
+        <div class="relative flex flex-col justify-between w-5 h-4">
+          <span class="block h-0.5 bg-white rounded-full transition-all duration-300 origin-center"
+            :class="isMobileMenuOpen ? 'rotate-45 translate-y-[7px]' : ''" />
+          <span class="block h-0.5 bg-white rounded-full transition-all duration-300"
+            :class="isMobileMenuOpen ? 'opacity-0 scale-x-0' : ''" />
+          <span class="block h-0.5 bg-white rounded-full transition-all duration-300 origin-center"
+            :class="isMobileMenuOpen ? '-rotate-45 -translate-y-[7px]' : ''" />
+        </div>
       </button>
     </div>
 
-    <!-- Backdrop -->
-    <div
-      v-if="isMobileMenuOpen"
-      @click="isMobileMenuOpen = false"
-      class="fixed inset-0 z-40 md:hidden"
-    />
-
     <!-- Mobile Menu -->
-    <div
-      :class="[
-        'md:hidden absolute top-full left-0 w-full mt-2.5 z-50 rounded-2xl overflow-hidden transition-all duration-300',
-        'border border-white/20',
-        isScrolled
-          ? 'bg-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_0_0_1px_rgba(255,255,255,0.15)]'
-          : 'bg-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.37),inset_0_0_0_1px_rgba(255,255,255,0.1)]',
-        isMobileMenuOpen
-          ? 'max-h-[320px] opacity-100 translate-y-0 scale-100'
-          : 'max-h-0 opacity-0 -translate-y-2 scale-95 pointer-events-none'
-      ]"
-      style="backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);"
-    >
-      <ul class="p-5 divide-y divide-white/10">
-        <li
-          v-for="(item, index) in navItems"
-          :key="item.id"
-          class="py-3 menu-item"
-          :style="{ transitionDelay: `${index * 70}ms` }"
-        >
-          <a :href="`#${item.id}`"
-            @click.prevent="scrollToSection(item.id); isMobileMenuOpen = false"
-            class="block font-semibold text-white hover:text-[#16db65] transition-all duration-300"
-            :class="isMobileMenuOpen
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 translate-y-3'"
-          >
-            {{ item.label }}
-          </a>
-        </li>
-      </ul>
-    </div>
+    <Transition enter-active-class="transition-all duration-300 ease-out" enter-from-class="-translate-y-3 opacity-0"
+      enter-to-class="translate-y-0 opacity-100" leave-active-class="transition-all duration-200 ease-in"
+      leave-from-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
+      <div v-if="isMobileMenuOpen"
+        class="md:hidden absolute top-[calc(100%+12px)] left-0 w-full z-50 rounded-2xl overflow-hidden border border-white/10"
+        style="backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); background: rgba(8, 12, 10, 0.85);">
+        <ul class="px-2 py-2">
+          <li v-for="(item, index) in navItems" :key="item.id">
+
+            <a :href="`#${item.id}`" @click.prevent="scrollToSection(item.id); isMobileMenuOpen = false"
+              class="flex items-center justify-between px-4 py-3 text-sm font-semibold transition-all duration-200 rounded-xl"
+              :class="activeSection === item.id
+                ? 'text-[#16db65] bg-[#16db65]/10'
+                : 'text-white/70 hover:text-white hover:bg-white/5'">
+              <span>{{ item.label }}</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#16db65] transition-opacity duration-200"
+                :class="activeSection === item.id ? 'opacity-100' : 'opacity-0'" />
+            </a>
+          </li>
+        </ul>
+
+        <!-- <div class="flex items-center justify-between pt-2 mx-4 mb-3 border-t border-white/8">
+          <span class="text-[11px] text-white/25 font-medium tracking-widest uppercase">Portfolio</span>
+          <span class="text-[11px] text-[#16db65]/50 font-medium">tawsiftamim.dev</span>
+        </div> -->
+      </div>
+    </Transition>
   </nav>
 </template>
 
@@ -126,17 +81,17 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const navItems = [
-  { label: 'HOME',       id: 'hero' },
-  { label: 'ABOUT',      id: 'about' },
+  { label: 'HOME', id: 'hero' },
+  { label: 'ABOUT', id: 'about' },
   { label: 'EXPERIENCE', id: 'experience' },
-  { label: 'SKILL',      id: 'skill' },
-  { label: 'PROJECT',    id: 'project' },
-  { label: 'CONTACT',    id: 'contact' },
+  { label: 'SKILL', id: 'skill' },
+  { label: 'PROJECT', id: 'project' },
+  { label: 'CONTACT', id: 'contact' },
 ]
 
-const isScrolled       = ref(false)
+const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
-const activeSection    = ref('hero')  // Changed from 'home' to 'hero'
+const activeSection = ref('hero')
 
 const toggleMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
@@ -144,22 +99,18 @@ const toggleMenu = () => {
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 20
+  if (isMobileMenuOpen.value) isMobileMenuOpen.value = false
 }
 
-// ── Scroll to section + trigger animation ──────────────────────────────────
 function scrollToSection(id) {
   const el = document.getElementById(id)
   if (!el) return
-
-  // Remove then re-add animation class so it replays on every click
   el.classList.remove('section-animate')
-  void el.offsetWidth // force reflow
+  void el.offsetWidth
   el.classList.add('section-animate')
-
   el.scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 
-// ── Active section via IntersectionObserver ────────────────────────────────
 let observer = null
 
 function setupObserver() {
@@ -202,13 +153,13 @@ onUnmounted(() => {
 }
 </style>
 
-<!-- 🌐 Global styles for section animation (not scoped) -->
 <style>
 @keyframes sectionSlideUp {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
