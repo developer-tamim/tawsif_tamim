@@ -116,9 +116,9 @@
                 </p>
 
                 <div class="flex flex-wrap gap-2 mb-6">
-                  <span class="px-3 py-1 text-xs font-medium rounded-full bg-emerald-500/10 text-emerald-500">React</span>
+                  <span class="px-3 py-1 text-xs font-medium rounded-full bg-emerald-500/10 text-emerald-500">HTML</span>
                   <span class="px-3 py-1 text-xs font-medium text-teal-500 rounded-full bg-teal-500/10">Vue.js</span>
-                  <span class="px-3 py-1 text-xs font-medium rounded-full bg-cyan-500/10 text-cyan-500">TypeScript</span>
+                  <span class="px-3 py-1 text-xs font-medium rounded-full bg-cyan-500/10 text-cyan-500">Tailwind CSS</span>
                 </div>
 
                 <!-- <div class="flex items-center gap-2 font-semibold transition-all text-emerald-500 group-hover:gap-3">
