@@ -46,7 +46,7 @@
     </div>
 
     <!-- Masonry Grid -->
-    <div class="max-w-6xl gap-3 mx-auto columns-1 sm:columns-2 lg:columns-3">
+    <div class="max-w-6xl gap-3 mx-auto columns-1 columns-2 lg:columns-3">
       <TransitionGroup name="fade">
         <div
           v-for="project in filteredProjects"
