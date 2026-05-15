@@ -5,7 +5,7 @@
 export const allProjects = [
   {
     id: 0, category: 'uiux', categoryLabel: 'UI/UX Design',
-    image: '/projects/finance-app.jpg',
+    image: '../assets/projects/ui_ux/signin-1.png',
     title: 'Finance Dashboard App', sub: 'Mobile · 2024',
     description: 'A comprehensive personal finance management app designed for Gen Z users. Features real-time spending insights, smart budgeting, and investment tracking.',
     meta: [{ icon: 'fa-calendar', text: '2024' }, { icon: 'fa-mobile-screen', text: 'Mobile' }, { icon: 'fa-clock', text: '6 weeks' }],
