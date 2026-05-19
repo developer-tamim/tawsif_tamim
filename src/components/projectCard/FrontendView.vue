@@ -129,31 +129,33 @@ import { RouterLink } from 'vue-router'
 const selectedProject = ref(null)
 
 const frontendProjects = [
-  {
-    id: 1,
-    title: 'DataViz Dashboard',
-    sub: 'Web App · 2024',
-    description: 'Real-time analytics platform with interactive charts.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&fit=crop',
-    liked: false,
-    tags: [
-      { name: 'Web', type: 'web' },
-      { name: 'React', type: 'tool' },
-      { name: 'TypeScript', type: 'tool' }
-    ],
-    meta: [
-      { text: '5 months', icon: 'fa-clock' },
-      { text: 'Team of 3', icon: 'fa-user' }
-    ],
-    tools: ['React', 'TypeScript', 'D3.js', 'Tailwind'],
-    liveUrl: '#'
-  },
+  // {
+  //   id: 1,
+  //   title: 'DataViz Dashboard',
+  //   sub: 'Web App · 2024',
+  //   description: 'Real-time analytics platform with interactive charts.',
+  //   image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&fit=crop',
+  //   liked: false,
+  //   tags: [
+  //     { name: 'Web', type: 'web' },
+  //     { name: 'React', type: 'tool' },
+  //     { name: 'TypeScript', type: 'tool' }
+  //   ],
+  //   meta: [
+  //     { text: '5 months', icon: 'fa-clock' },
+  //     { text: 'Team of 3', icon: 'fa-user' }
+  //   ],
+  //   tools: ['React', 'TypeScript', 'D3.js', 'Tailwind'],
+  //   liveUrl: '#'
+  // },
   {
     id: 2,
-    title: 'ShopNexus Platform',
-    sub: 'E-commerce · 2024',
-    description: 'Full-stack e-commerce with real-time inventory and seamless checkout.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&fit=crop',
+    title: 'Personal Portfolio',
+    sub: 'Website · 2024',
+    description: 'Personal portfolio website showcasing projects and skills.',
+    // image: '../../assets/project/frontend/portfolio.png',
+    image: new URL('../../assets/project/frontend/portfolio.png', 
+    import.meta.url).href,
     liked: false,
     tags: [
       { name: 'Web', type: 'web' },
@@ -167,25 +169,25 @@ const frontendProjects = [
     tools: ['Vue 3', 'Pinia', 'Tailwind', 'Node.js'],
     liveUrl: '#'
   },
-  {
-    id: 3,
-    title: 'Creative Portfolio',
-    sub: 'Website · 2023',
-    description: 'Award-winning portfolio site with smooth animations and 3D elements.',
-    image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&fit=crop',
-    liked: false,
-    tags: [
-      { name: 'Web', type: 'web' },
-      { name: 'Next.js', type: 'tool' },
-      { name: 'Three.js', type: 'tool' }
-    ],
-    meta: [
-      { text: '4 months', icon: 'fa-clock' },
-      { text: 'Solo project', icon: 'fa-user' }
-    ],
-    tools: ['Next.js', 'Three.js', 'Framer Motion', 'GSAP'],
-    liveUrl: '#'
-  }
+  // {
+  //   id: 3,
+  //   title: 'Creative Portfolio',
+  //   sub: 'Website · 2023',
+  //   description: 'Award-winning portfolio site with smooth animations and 3D elements.',
+  //   image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&fit=crop',
+  //   liked: false,
+  //   tags: [
+  //     { name: 'Web', type: 'web' },
+  //     { name: 'Next.js', type: 'tool' },
+  //     { name: 'Three.js', type: 'tool' }
+  //   ],
+  //   meta: [
+  //     { text: '4 months', icon: 'fa-clock' },
+  //     { text: 'Solo project', icon: 'fa-user' }
+  //   ],
+  //   tools: ['Next.js', 'Three.js', 'Framer Motion', 'GSAP'],
+  //   liveUrl: '#'
+  // }
 ]
 
 const tagClass = (type) => ({

@@ -134,7 +134,9 @@ const graphicsProjects = [
     title: 'Nexus Tech Branding',
     sub: 'Branding · 2024',
     description: 'Complete brand identity including logo, color system, and marketing collateral.',
-    image: 'https://images.unsplash.com/photo-1634942537034-2531766767d1?w=800&fit=crop',
+    // image: 'https://images.unsplash.com/photo-1634942537034-2531766767d1?w=800&fit=crop',
+    image: new URL('../../assets/project/graphics/poster2.jpg', 
+    import.meta.url).href,
     liked: false,
     tags: [
       { name: 'Branding', type: 'branding' },
@@ -153,7 +155,9 @@ const graphicsProjects = [
     title: 'Social Campaign Kit',
     sub: 'Social Media · 2024',
     description: "Cohesive social media templates for a fitness brand's product launch.",
-    image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&fit=crop',
+    // image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&fit=crop',
+    image: new URL('../../assets/project/graphics/poster3.jpg', 
+    import.meta.url).href,
     liked: false,
     tags: [
       { name: 'Social', type: 'social' },
@@ -172,7 +176,9 @@ const graphicsProjects = [
     title: 'Event Poster Series',
     sub: 'Print · 2023',
     description: 'Bold typographic posters for an annual design conference series.',
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&fit=crop',
+    // image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&fit=crop',
+    image: new URL('../../assets/project/graphics//flyer-1.jpg', 
+    import.meta.url).href,
     liked: false,
     tags: [
       { name: 'Print', type: 'print' },

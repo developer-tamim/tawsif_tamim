@@ -50,12 +50,12 @@
             </div>
             <h3 class="mb-2 text-xl font-bold text-white">{{ project.title }}</h3>
             <p class="text-sm text-gray-500">{{ project.description }}</p>
-            <div class="flex items-center gap-2 mt-4 transition-all duration-300 translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+            <!-- <div class="flex items-center gap-2 mt-4 transition-all duration-300 translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
               <button class="flex items-center justify-center text-xs text-white transition-colors rounded-full w-7 h-7 bg-white/15 hover:bg-white/25" @click.stop="toggleLike(project)">
                 <i :class="['fa-heart', project.liked ? 'fa-solid text-[#16db65]' : 'fa-regular']"></i>
               </button>
               <button class="flex-1 py-1.5 rounded-lg bg-[#16db65] text-black text-xs font-bold hover:bg-green-400 transition-colors">View Project</button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -107,14 +107,14 @@
             <div class="flex flex-wrap gap-2 mb-6">
               <span v-for="t in selectedProject.tools" :key="t" class="px-2.5 py-1 rounded-md bg-white/5 border border-white/8 text-xs text-white/70">{{ t }}</span>
             </div>
-            <div class="flex flex-wrap gap-3">
+            <!-- <div class="flex flex-wrap gap-3">
               <a :href="selectedProject.liveUrl || '#'" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#16db65] text-black font-bold text-sm hover:bg-green-400 transition-colors">
                 <i class="text-xs fa-solid fa-arrow-up-right-from-square"></i> Live Preview
               </a>
               <button class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/15 text-white font-semibold text-sm hover:bg-white/7 transition-colors">
                 <i class="text-xs fa-regular fa-file-lines"></i> Case Study
               </button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -131,10 +131,12 @@ const selectedProject = ref(null)
 const uiuxProjects = [
   {
     id: 1,
-    title: 'FinTrack Mobile App',
-    sub: 'Mobile · 2024',
+    title: 'CostCue Mobile App',
+    sub: 'Mobile',
     description: 'Complete redesign of a personal finance app focusing on simplicity and data visualization.',
-    image: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&fit=crop',
+    // image: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&fit=crop',
+    image: new URL('../../assets/project/ui_ux/home.png', 
+    import.meta.url).href,
     liked: false,
     tags: [
       { name: 'Mobile', type: 'mobile' },
@@ -142,50 +144,50 @@ const uiuxProjects = [
       { name: 'User Research', type: 'tool' }
     ],
     meta: [
-      { text: '6 months', icon: 'fa-clock' },
-      { text: 'Team of 4', icon: 'fa-user' }
+      { text: '1 months', icon: 'fa-clock' },
+      { text: 'Team of 1', icon: 'fa-user' }
     ],
-    tools: ['Figma', 'Maze', 'Notion'],
+    tools: ['Figma'],
     liveUrl: '#'
   },
-  {
-    id: 2,
-    title: 'Analytics Dashboard',
-    sub: 'Web · 2024',
-    description: 'Data-heavy SaaS dashboard redesigned for clarity and faster decision-making.',
-    image: 'https://images.unsplash.com/photo-1559028016-481772bda87a?w=800&fit=crop',
-    liked: false,
-    tags: [
-      { name: 'Web', type: 'web' },
-      { name: 'Adobe XD', type: 'tool' },
-      { name: 'Usability Testing', type: 'tool' }
-    ],
-    meta: [
-      { text: '4 months', icon: 'fa-clock' },
-      { text: 'Solo project', icon: 'fa-user' }
-    ],
-    tools: ['Adobe XD', 'Hotjar', 'Jira'],
-    liveUrl: '#'
-  },
-  {
-    id: 3,
-    title: 'ShopFlow E-commerce',
-    sub: 'Web · 2023',
-    description: 'Streamlined checkout flow that increased conversion rates by 34%.',
-    image: 'https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?w=800&fit=crop',
-    liked: false,
-    tags: [
-      { name: 'Web', type: 'web' },
-      { name: 'A/B Testing', type: 'tool' },
-      { name: 'Wireframing', type: 'tool' }
-    ],
-    meta: [
-      { text: '3 months', icon: 'fa-clock' },
-      { text: 'Team of 3', icon: 'fa-user' }
-    ],
-    tools: ['Figma', 'Optimizely', 'Miro'],
-    liveUrl: '#'
-  }
+  // {
+  //   id: 2,
+  //   title: 'Analytics Dashboard',
+  //   sub: 'Web · 2024',
+  //   description: 'Data-heavy SaaS dashboard redesigned for clarity and faster decision-making.',
+  //   image: 'https://images.unsplash.com/photo-1559028016-481772bda87a?w=800&fit=crop',
+  //   liked: false,
+  //   tags: [
+  //     { name: 'Web', type: 'web' },
+  //     { name: 'Adobe XD', type: 'tool' },
+  //     { name: 'Usability Testing', type: 'tool' }
+  //   ],
+  //   meta: [
+  //     { text: '4 months', icon: 'fa-clock' },
+  //     { text: 'Solo project', icon: 'fa-user' }
+  //   ],
+  //   tools: ['Adobe XD', 'Hotjar', 'Jira'],
+  //   liveUrl: '#'
+  // },
+  // {
+  //   id: 3,
+  //   title: 'ShopFlow E-commerce',
+  //   sub: 'Web · 2023',
+  //   description: 'Streamlined checkout flow that increased conversion rates by 34%.',
+  //   image: 'https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?w=800&fit=crop',
+  //   liked: false,
+  //   tags: [
+  //     { name: 'Web', type: 'web' },
+  //     { name: 'A/B Testing', type: 'tool' },
+  //     { name: 'Wireframing', type: 'tool' }
+  //   ],
+  //   meta: [
+  //     { text: '3 months', icon: 'fa-clock' },
+  //     { text: 'Team of 3', icon: 'fa-user' }
+  //   ],
+  //   tools: ['Figma', 'Optimizely', 'Miro'],
+  //   liveUrl: '#'
+  // }
 ]
 
 const tagClass = (type) => ({
