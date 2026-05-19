@@ -1,98 +1,225 @@
 <template>
-  <div class="min-h-screen text-gray-100 bg-transparent">
-    <Navbar />
-    <div class="min-h-screen bg-mesh">
-      <div class="px-6 py-16 mx-auto max-w-7xl lg:px-8">
-        <RouterLink to="/" class="inline-flex items-center gap-2 px-6 py-3 mb-12 font-medium transition-all duration-300 bg-gray-900 rounded-full shadow-lg back-btn hover:shadow-xl">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-          Back to Services
-        </RouterLink>
+  <section id="project" class="min-h-screen px-4 py-20 sm:px-6 bg-black">
+    <div class="max-w-6xl mx-auto">
 
-        <div class="mb-16 page-transition">
-          <span class="inline-block px-4 py-1.5 text-sm font-medium bg-accent/10 text-accent rounded-full mb-4">Graphics Design</span>
-          <h1 class="mb-6 text-5xl font-bold tracking-tighter md:text-6xl">Visual <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-500">Identity</span></h1>
-          <p class="max-w-2xl text-xl text-gray-400">Branding and visual design projects that make lasting impressions.</p>
-        </div>
+      <!-- Back Button -->
+      <RouterLink to="/" class="group inline-flex items-center gap-3 px-6 py-3 mb-12 rounded-2xl border border-white/15 text-white font-semibold text-sm hover:border-[#16db65]/60 hover:bg-[#16db65]/8 transition-all duration-300">
+        <span class="w-7 h-7 rounded-full bg-white/8 border border-white/12 flex items-center justify-center group-hover:bg-[#16db65]/20 group-hover:border-[#16db65]/40 transition-all duration-300">
+          <i class="fa-solid fa-arrow-left text-[11px] text-[#16db65] group-hover:-translate-x-0.5 transition-transform duration-200"></i>
+        </span>
+        <span>Back to Services</span>
+      </RouterLink>
 
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div v-for="(project, index) in graphicsProjects" :key="project.id"
-            class="overflow-hidden bg-gray-900 border border-gray-800 shadow-lg project-card rounded-3xl"
-            :style="{ animationDelay: `${index * 0.15}s` }">
-            <div class="h-64 overflow-hidden image-reveal">
-              <img :src="project.image" :alt="project.title" class="object-cover w-full h-full transition-transform duration-700 hover:scale-110">
+      <!-- Header -->
+      <div class="mb-16 page-transition">
+        <span class="inline-flex px-3 py-1 rounded-full text-xs font-semibold mb-4 bg-amber-500/15 text-amber-400 border border-amber-500/25">Graphics Design</span>
+        <h1 class="mb-6 text-5xl font-bold tracking-tighter text-white md:text-6xl">
+          Visual <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#058c42] to-[#16db65]">Identity</span>
+        </h1>
+        <p class="max-w-2xl text-xl text-gray-500">Branding and visual design projects that make lasting impressions.</p>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          v-for="(project, index) in graphicsProjects"
+          :key="project.id"
+          class="rounded-2xl overflow-hidden cursor-pointer relative border border-white/6 group bg-[#0a0a0a] project-card"
+          :style="{ animationDelay: `${index * 0.15}s` }"
+          @click="openModal(project)"
+        >
+          <div class="h-64 overflow-hidden">
+            <img
+              :src="project.image"
+              :alt="project.title"
+              class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+          <div class="p-6">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span
+                v-for="tag in project.tags"
+                :key="tag.name"
+                :class="[
+                  'inline-flex px-2.5 py-1 rounded-full text-[11px] font-semibold transition-all duration-300 hover:-translate-y-0.5',
+                  tagClass(tag.type)
+                ]"
+              >
+                {{ tag.name }}
+              </span>
             </div>
-            <div class="p-6">
-              <h3 class="mb-2 text-xl font-bold">{{ project.title }}</h3>
-              <p class="mb-4 text-sm text-gray-400">{{ project.description }}</p>
-              <div class="flex flex-wrap gap-2">
-                <span v-for="tag in project.tags" :key="tag.name"
-                  class="tag-bounce px-3 py-1 text-xs font-medium rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:scale-105"
-                  :class="tag.class">{{ tag.name }}</span>
-              </div>
+            <h3 class="mb-2 text-xl font-bold text-white">{{ project.title }}</h3>
+            <p class="text-sm text-gray-500">{{ project.description }}</p>
+            <div class="flex items-center gap-2 mt-4 transition-all duration-300 translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+              <button class="flex items-center justify-center text-xs text-white transition-colors rounded-full w-7 h-7 bg-white/15 hover:bg-white/25" @click.stop="toggleLike(project)">
+                <i :class="['fa-heart', project.liked ? 'fa-solid text-[#16db65]' : 'fa-regular']"></i>
+              </button>
+              <button class="flex-1 py-1.5 rounded-lg bg-[#16db65] text-black text-xs font-bold hover:bg-green-400 transition-colors">View Project</button>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+
+    <!-- Lightbox Overlay -->
+    <Transition name="modal">
+      <div
+        v-if="selectedProject"
+        class="fixed inset-0 z-[100] bg-black/88 flex items-center justify-center p-4 sm:p-6"
+        @click.self="closeModal"
+      >
+        <div class="relative bg-[#0d1410] border border-white/10 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+          <button @click="closeModal" class="absolute top-3.5 right-3.5 z-10 w-9 h-9 rounded-full bg-black/60 border border-white/15 text-white flex items-center justify-center hover:bg-white/15 transition-colors backdrop-blur-md">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <img :src="selectedProject.image" :alt="selectedProject.title" class="w-full rounded-t-3xl object-cover max-h-[400px]" />
+          <div class="p-6 sm:p-7">
+            <div class="flex flex-wrap items-start justify-between gap-4">
+              <div>
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span
+                    v-for="tag in selectedProject.tags"
+                    :key="tag.name"
+                    :class="['inline-flex px-3 py-1 rounded-full text-xs font-semibold', tagClass(tag.type)]"
+                  >
+                    {{ tag.name }}
+                  </span>
+                </div>
+                <h3 class="text-2xl font-bold tracking-tight text-white">{{ selectedProject.title }}</h3>
+                <p class="text-gray-500 text-sm mt-0.5">{{ selectedProject.sub }}</p>
+              </div>
+              <div class="flex gap-2">
+                <button @click="navigate(-1)" class="flex items-center justify-center text-white transition-colors border rounded-full w-9 h-9 bg-white/7 border-white/12 hover:bg-white/15">
+                  <i class="text-xs fa-solid fa-chevron-left"></i>
+                </button>
+                <button @click="navigate(1)" class="flex items-center justify-center text-white transition-colors border rounded-full w-9 h-9 bg-white/7 border-white/12 hover:bg-white/15">
+                  <i class="text-xs fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+            <p class="mt-4 mb-5 text-sm leading-relaxed text-gray-400">{{ selectedProject.description }}</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span v-for="m in selectedProject.meta" :key="m.text" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/8 text-xs text-white/60">
+                <i :class="`fa-regular ${m.icon} text-[13px]`"></i>{{ m.text }}
+              </span>
+            </div>
+            <p class="text-[11px] font-semibold text-gray-600 uppercase tracking-widest mb-2">Tools used</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span v-for="t in selectedProject.tools" :key="t" class="px-2.5 py-1 rounded-md bg-white/5 border border-white/8 text-xs text-white/70">{{ t }}</span>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a :href="selectedProject.liveUrl || '#'" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#16db65] text-black font-bold text-sm hover:bg-green-400 transition-colors">
+                <i class="text-xs fa-solid fa-arrow-up-right-from-square"></i> Live Preview
+              </a>
+              <button class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/15 text-white font-semibold text-sm hover:bg-white/7 transition-colors">
+                <i class="text-xs fa-regular fa-file-lines"></i> Case Study
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Transition>
+  </section>
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
-import Navbar from '../Navbar.vue';
+
+const selectedProject = ref(null)
 
 const graphicsProjects = [
   {
     id: 1,
     title: 'Nexus Tech Branding',
+    sub: 'Branding · 2024',
     description: 'Complete brand identity including logo, color system, and marketing collateral.',
     image: 'https://images.unsplash.com/photo-1634942537034-2531766767d1?w=800&fit=crop',
+    liked: false,
     tags: [
-      { name: 'Illustrator', class: 'bg-pink-900/30 text-pink-400' },
-      { name: 'Brand Strategy', class: 'bg-orange-900/30 text-orange-400' },
-      { name: 'Logo Design', class: 'bg-red-900/30 text-red-400' }
-    ]
+      { name: 'Branding', type: 'branding' },
+      { name: 'Illustrator', type: 'tool' },
+      { name: 'Logo Design', type: 'tool' }
+    ],
+    meta: [
+      { text: '3 months', icon: 'fa-clock' },
+      { text: 'Solo project', icon: 'fa-user' }
+    ],
+    tools: ['Illustrator', 'Photoshop', 'Figma'],
+    liveUrl: '#'
   },
   {
     id: 2,
     title: 'Social Campaign Kit',
+    sub: 'Social Media · 2024',
     description: "Cohesive social media templates for a fitness brand's product launch.",
     image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&fit=crop',
+    liked: false,
     tags: [
-      { name: 'Photoshop', class: 'bg-pink-900/30 text-pink-400' },
-      { name: 'Motion Graphics', class: 'bg-yellow-900/30 text-yellow-400' },
-      { name: 'Canva', class: 'bg-rose-900/30 text-rose-400' }
-    ]
+      { name: 'Social', type: 'social' },
+      { name: 'Photoshop', type: 'tool' },
+      { name: 'Motion Graphics', type: 'tool' }
+    ],
+    meta: [
+      { text: '2 months', icon: 'fa-clock' },
+      { text: 'Team of 2', icon: 'fa-user' }
+    ],
+    tools: ['Photoshop', 'After Effects', 'Canva'],
+    liveUrl: '#'
   },
   {
     id: 3,
     title: 'Event Poster Series',
+    sub: 'Print · 2023',
     description: 'Bold typographic posters for an annual design conference series.',
     image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&fit=crop',
+    liked: false,
     tags: [
-      { name: 'InDesign', class: 'bg-pink-900/30 text-pink-400' },
-      { name: 'Typography', class: 'bg-purple-900/30 text-purple-400' },
-      { name: 'Print Design', class: 'bg-orange-900/30 text-orange-400' }
-    ]
+      { name: 'Print', type: 'print' },
+      { name: 'InDesign', type: 'tool' },
+      { name: 'Typography', type: 'tool' }
+    ],
+    meta: [
+      { text: '1 month', icon: 'fa-clock' },
+      { text: 'Solo project', icon: 'fa-user' }
+    ],
+    tools: ['InDesign', 'Illustrator', 'Photoshop'],
+    liveUrl: '#'
   }
 ]
+
+const tagClass = (type) => ({
+  branding: 'bg-[#16db65]/15 text-[#16db65] border border-[#16db65]/25',
+  social: 'bg-purple-500/20 text-purple-300 border border-purple-500/30',
+  print: 'bg-amber-500/15 text-amber-400 border border-amber-500/25',
+  tool: 'bg-white/5 text-white/50 border border-white/10',
+}[type])
+
+function openModal(project) {
+  selectedProject.value = project
+  document.body.style.overflow = 'hidden'
+}
+
+function closeModal() {
+  selectedProject.value = null
+  document.body.style.overflow = ''
+}
+
+function navigate(dir) {
+  const idx = graphicsProjects.findIndex(p => p.id === selectedProject.value.id)
+  const next = graphicsProjects[idx + dir]
+  if (next) selectedProject.value = next
+}
+
+function toggleLike(project) {
+  project.liked = !project.liked
+}
 </script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :deep(body) { font-family: 'Inter', sans-serif; }
-
-.bg-mesh {
-  background: 
-    radial-gradient(at 40% 20%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
-    radial-gradient(at 80% 0%, rgba(139, 92, 246, 0.06) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, rgba(236, 72, 153, 0.06) 0px, transparent 50%),
-    radial-gradient(at 80% 50%, rgba(99, 102, 241, 0.06) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, rgba(139, 92, 246, 0.08) 0px, transparent 50%);
-}
 
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(40px); }
@@ -110,35 +237,12 @@ const graphicsProjects = [
 }
 
 .project-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(22, 219, 101, 0.08);
 }
 
-.back-btn {
-  position: relative;
-  overflow: hidden;
-}
-
-.back-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
-  transition: left 0.5s;
-}
-
-.back-btn:hover::before {
-  left: 100%;
-}
-
-.image-reveal {
-  overflow: hidden;
-}
-
-.tag-bounce {
-  cursor: default;
-}
+.modal-enter-active, .modal-leave-active { transition: opacity .25s; }
+.modal-enter-from, .modal-leave-to { opacity: 0; }
+.modal-enter-active > div, .modal-leave-active > div { transition: transform .3s cubic-bezier(.23,1,.32,1); }
+.modal-enter-from > div, .modal-leave-to > div { transform: scale(.95) translateY(16px); }
 </style>

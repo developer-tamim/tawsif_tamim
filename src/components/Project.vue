@@ -1,11 +1,11 @@
 <template>
-  <section id="project" class="min-h-screen text-gray-100 bg-gray-950">
+  <section id="project" class="min-h-screen text-gray-100 bg-transparent">
     <div class="min-h-screen bg-mesh">
       <div class="px-6 py-24 mx-auto max-w-7xl lg:px-8">
 
         <!-- Header -->
         <div class="mb-24 text-center">
-          <span class="inline-block px-5 py-2 mb-6 text-xs font-medium tracking-widest uppercase border border-gray-700 rounded-full text-primary">
+          <span class="inline-block px-5 py-2 mb-6 text-xs font-medium tracking-widest uppercase border border-gray-700 rounded-full text-[#16db65]">
             What I Do
           </span>
           <h2 class="mb-6 text-5xl font-bold tracking-tighter md:text-7xl">
@@ -186,7 +186,7 @@ const handleMouseLeave = (cardId) => {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+  background: linear-gradient(135deg, #058c42 0%, #0eb454 50%, #16db65 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -194,11 +194,11 @@ const handleMouseLeave = (cardId) => {
 
 .bg-mesh {
   background: 
-    radial-gradient(at 40% 20%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
-    radial-gradient(at 80% 0%, rgba(139, 92, 246, 0.06) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, rgba(236, 72, 153, 0.06) 0px, transparent 50%),
-    radial-gradient(at 80% 50%, rgba(99, 102, 241, 0.06) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, rgba(139, 92, 246, 0.08) 0px, transparent 50%);
+    radial-gradient(at 40% 20%, rgba(5, 140, 66, 0.08) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(14, 180, 84, 0.06) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(22, 219, 101, 0.06) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, rgba(5, 140, 66, 0.06) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(14, 180, 84, 0.08) 0px, transparent 50%);
 }
 
 @keyframes float {
