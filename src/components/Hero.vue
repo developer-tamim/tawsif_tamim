@@ -500,7 +500,7 @@ const handleMouseLeave = () => {
 .hero-wrapper {
   padding-top: 0.5rem;
   padding-bottom: 2rem;
-  margin-top: 48px;
+  /* margin-top: 48px; */
 }
 
 @media (min-width: 640px) {
